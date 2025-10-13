@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio – Thanh Duy</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- <style>
+    :root{
+      /* Colors */
+      --primary:#00e5fe;
+      --text-strong-light:#111;
+      --text-muted-light:#666;
+      --bg-light:#fff;
+
+      --text-strong-dark:#fff;
+      --text-muted-dark:#cdd2d6;
+      --bg-dark: #05070a;
+
+      /* Layout */
+      --maxw: 1100px;
+      --radius: 14px;
+      --header-h: 64px;
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+      --trans: 220ms ease;
+      --section-pad: 72px; /* top/bottom padding (cộng thêm min-height) */
+    }
+
+    /* Theme */
+    html[data-theme="light"]{
+      --bg: var(--bg-light);
+      --text-strong: var(--text-strong-light);
+      --text-muted: var(--text-muted-light);
+    }
+    html[data-theme="dark"]{
+      --bg: var(--bg-dark);
+      --text-strong: var(--text-strong-dark);
+      --text-muted: var(--text-muted-dark);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Source Sans 3","Source Sans Pro",system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans",sans-serif;
+      background: var(--bg);
+      color: var(--text-muted);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    /* Dark bg with glowing dots */
+    html[data-theme="dark"] body::before{
+      content:"";
+      position:fixed; inset:0; z-index:-2;
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(0,229,254,.08), transparent 60%),
+        radial-gradient(800px 500px at 80% 20%, rgba(255,255,255,.05), transparent 60%),
+        radial-gradient(700px 400px at 60% 80%, rgba(0,229,254,.05), transparent 60%),
+        linear-gradient(180deg, #030406 0%, #0a0f14 100%);
+      filter: saturate(110%);
+    }
+    html[data-theme="light"] body::before{
+      content:""; position:fixed; inset:0; z-index:-2;
+      background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+    }
+
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    .container{width:100%; max-width:var(--maxw); margin:0 auto; padding:0 20px}
+
+    /* HEADER */
+    header{
+      position:sticky; top:0; z-index:50; height:var(--header-h);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    html[data-theme="light"] header{ border-bottom:1px solid #eee}
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      height:var(--header-h);
+    }
+    .brand{ font-weight:800; letter-spacing:.4px; color: var(--text-strong) }
+    .brand .dot{ color:var(--primary)}
+    .nav ul{ list-style:none; margin:0; padding:0; display:flex; gap:14px }
+    .nav a{
+      padding:10px 6px; position:relative; font-weight:600; color:var(--text-muted);
+      transition: color var(--trans);
+    }
+    .nav a:hover{ color:var(--text-strong)}
+    .nav a::after{
+      content:""; position:absolute; left:0; right:0; bottom:2px; height:2px;
+      background: var(--primary); transform: scaleX(0); transform-origin: center;
+      transition: transform 240ms ease; border-radius:2px;
+    }
+    .nav a.active{ color:var(--text-strong)}
+    .nav a.active::after{ transform: scaleX(1)}
+    .right{ display:flex; align-items:center; gap:10px }
+    .btn-theme{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border:1px solid rgba(255,255,255,.12);
+      border-radius: 999px; cursor:pointer; background: transparent; color: var(--text-muted);
+      transition: border-color var(--trans), color var(--trans), background var(--trans);
+    }
+    html[data-theme="light"] .btn-theme{ border-color:#ddd}
+    .btn-theme:hover{ color:var(--text-strong); border-color: var(--primary)}
+    .menu-toggle{ display:none }
+
+    @media (max-width: 920px){
+      .nav ul{ display:none}
+      .menu-toggle{ display:inline-flex; padding:8px 10px; border:1px solid rgba(255,255,255,.12); border-radius:10px; cursor:pointer}
+      html[data-theme="light"] .menu-toggle{ border-color:#ddd}
+      .drawer{ position:fixed; inset: var(--header-h) 0 auto 0; background: rgba(0,0,0,.6); display:none }
+      .drawer.open{ display:block}
+      .drawer-nav{
+        margin:12px; border-radius:14px; padding:12px;
+        background: rgba(20,24,28,.85); backdrop-filter: blur(12px);
+      }
+      html[data-theme="light"] .drawer-nav{ background: #fff; border:1px solid #eee}
+      .drawer-nav a{ display:block; padding:12px 10px; border-radius:10px}
+      .drawer-nav a.active{ background: rgba(0,229,254,.12)}
+      html[data-theme="light"] .drawer-nav a.active{ background:#e6fbff}
+    }
+
+    /* ===== Sections: min-height 100vh & vertical centering ===== */
+    section{
+      min-height: 100vh; /* theo yêu cầu “1 vh” mình hiểu là 100vh */
+      display:flex; align-items:center; /* canh giữa theo trục dọc */
+      padding: var(--section-pad) 0; /* vẫn có padding khi viewport thấp */
+    }
+
+    h1,h2,h3{ margin:0 0 10px; color: var(--text-strong)}
+    .lede{ font-size:18px; margin:6px 0 24px}
+    .muted{ color: var(--text-muted)}
+    .primary{ color: var(--primary) }
+
+    /* HERO */
+    .hero{ width:100% }
+    .hero-grid{
+      display:grid; grid-template-columns: 1.15fr .85fr; gap:28px; align-items:center;
+    }
+    @media (max-width: 920px){ .hero-grid{ grid-template-columns: 1fr; gap:20px }}
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      border:1px solid rgba(255,255,255,.12);
+      padding:6px 10px; border-radius:999px; font-weight:600; font-size:14px; color:var(--text-muted);
+    }
+    html[data-theme="light"] .badge{ border-color:#eee}
+    .title{ font-size: clamp(28px, 4.6vw, 44px); font-weight: 900; line-height:1.15; }
+    .swap-line{ display:inline-block; min-width: 10ch; font-weight:900; color: var(--primary); animation: fadeIn 320ms ease }
+    @keyframes fadeIn{ from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:translateY(0)} }
+    .socials{ display:flex; gap:12px; margin-top:14px}
+    .icon-btn{
+      width:40px; height:40px; border-radius:10px; display:grid; place-items:center;
+      border:1px solid rgba(255,255,255,.12); cursor:pointer; transition: transform var(--trans), border-color var(--trans);
+    }
+    html[data-theme="light"] .icon-btn{ border-color:#e7e7e7}
+    .icon-btn:hover{ transform: translateY(-2px); border-color: var(--primary) }
+
+    /* Avatar card */
+    .avatar-card{
+      position:relative; border-radius: var(--radius); overflow:hidden;
+      padding:16px; isolation:isolate;
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.00));
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow: var(--shadow);
+    }
+    html[data-theme="light"] .avatar-card{ background:#fff; border:1px solid #eee; }
+    .avatar-wrap{
+      aspect-ratio: 1/1; border-radius: 18px; overflow:hidden; position:relative;
+      background: radial-gradient(40% 40% at 60% 30%, rgba(0,229,254,.35), transparent 60%),
+                  radial-gradient(50% 50% at 30% 70%, rgba(255,255,255,.18), transparent 60%),
+                  linear-gradient(180deg, #0b1116, #070b0f);
+      border:1px solid rgba(255,255,255,.08);
+    }
+    html[data-theme="light"] .avatar-wrap{ background: linear-gradient(180deg, #f8feff, #edfaff); border-color:#e7f8fb; }
+    .avatar{ position:absolute; inset:0; display:grid; place-items:center; color:#fff; font-weight:900; font-size: clamp(40px, 8vw, 72px); letter-spacing:2px; text-shadow: 0 6px 24px rgba(0,229,254,.35); }
+    .avatar-sub{ position:absolute; bottom:12px; right:12px; font-size:12px; color:var(--text-muted)}
+
+    /* ABOUT */
+    .about{ width:100% }
+    .about-grid{
+      display:grid; grid-template-columns: .7fr 1.3fr; gap:28px; align-items:center;
+    }
+    @media (max-width: 920px){ .about-grid{ grid-template-columns: 1fr; gap:16px }}
+    .kv{
+      display:grid; gap:8px; background: rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.08);
+      padding:16px; border-radius: var(--radius);
+    }
+    html[data-theme="light"] .kv{ background:#fff; border-color:#eee}
+    .kv .row{ display:flex; gap:10px; align-items:center}
+    .kv .key{ width:110px; color:var(--text-muted); font-weight:600}
+    .kv .val{ color:var(--text-strong); font-weight:700}
+    .about .desc{ max-width: 64ch; }
+    .about .desc p{ margin: 8px 0 }
+
+    /* SKILLS */
+    .skills{ width:100% }
+    .skill-groups{
+      display:grid; grid-template-columns: repeat(3, 1fr); gap:20px;
+    }
+    @media (max-width: 920px){ .skill-groups{ grid-template-columns: 1fr }}
+    .skill-card{
+      background: rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius); padding:16px 16px 20px;
+    }
+    html[data-theme="light"] .skill-card{ background:#fff; border-color:#eee}
+    .skill-card h3{ margin-bottom:8px }
+    .logos{ display:flex; flex-wrap:wrap; gap:12px }
+    .logo{
+      width:56px; height:56px; display:grid; place-items:center; border-radius:12px;
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      transition: transform var(--trans), box-shadow var(--trans), border-color var(--trans), background var(--trans);
+    }
+    html[data-theme="light"] .logo{ background:#fafafa; border-color:#eee }
+    .logo img{ width:28px; height:28px }
+    .logo:hover{ transform: translateY(-3px); border-color: var(--primary); box-shadow: 0 8px 22px rgba(0,229,254,.12) }
+
+    /* Helpers */
+    .sr-only{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; clip-path:inset(50%); border:0; padding:0; margin:-1px; }
+  </style> -->
+  </head>
+  <body>
+    <!-- =================== HEADER =================== -->
+    <header id="top">
+      <div class="container nav">
+        <a href="#top" class="brand">thanh<span class="dot">.</span>dui</a>
+
+        <nav aria-label="Chuyển tới phần">
+          <ul id="mainNav">
+            <li><a href="#about" data-spy>About me</a></li>
+            <li><a href="#skills" data-spy>Skill</a></li>
+            <li><a href="#projects" data-spy>Projects</a></li>
+            <li><a href="#contact" data-spy>Contact me</a></li>
+          </ul>
+        </nav>
+
+        <div class="right">
+          <button class="btn-theme" id="themeBtn" aria-label="Đổi giao diện">
+            <span id="themeIcon" aria-hidden="true">🌙</span
+            ><span class="sr-only">Đổi dark/light</span>
+          </button>
+          <button class="menu-toggle" id="menuBtn" aria-label="Mở menu">
+            ☰
+          </button>
+        </div>
+      </div>
+
+      <!-- Drawer for mobile -->
+      <div class="drawer" id="drawer">
+        <div class="drawer-nav">
+          <a href="#about" data-spy>About me</a>
+          <a href="#skills" data-spy>Skill</a>
+          <a href="#education" data-spy>My Education</a>
+          <a href="#projects" data-spy>Projects</a>
+          <a href="#contact" data-spy>Contact me</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- =================== HERO =================== -->
+      <section id="hero" class="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="badge">👋 Xin chào!</div>
+            <h1 class="title">
+              Tôi là <span class="swap-line" id="swapText">Thanh Duy</span
+              ><br />
+              <span class="muted"
+                >Xây dựng giao diện web hiện đại, tối ưu và dễ mở rộng.</span
+              >
+            </h1>
+            <p class="lede">
+              Tập trung Front-end (React/Next.js, TypeScript, Tailwind CSS). Yêu
+              thích trải nghiệm mượt mà, mã sạch, và thiết kế có hệ thống.
+            </p>
+            <div class="socials" aria-label="Mạng xã hội">
+              <a
+                class="icon-btn"
+                href="https://www.linkedin.com/in/duy-thanh-b32589351/"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+              >
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4zM8 8h3.8v2.2h.06c.53-1 1.84-2.2 3.78-2.2C20 8 24 10.42 24 16.08V24h-4v-7.2c0-1.72-.03-3.94-2.4-3.94-2.4 0-2.77 1.87-2.77 3.8V24h-4V8z"
+                  />
+                </svg>
+              </a>
+              <a
+                class="icon-btn"
+                href="https://github.com/duypipi"
+                target="_blank"
+                rel="noopener"
+                aria-label="GitHub"
+              >
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.2c-3.34.73-4.04-1.61-4.04-1.61-.55-1.41-1.34-1.79-1.34-1.79-1.1-.77.08-.75.08-.75 1.22.09 1.86 1.26 1.86 1.26 1.08 1.86 2.83 1.32 3.52 1.01.11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0C18.12 5.6 19.12 5.92 19.12 5.92c.66 1.65.24 2.87.12 3.17.77.84 1.24 1.9 1.24 3.22 0 4.61-2.8 5.62-5.48 5.92.43.38.82 1.11.82 2.24v3.32c0 .32.21.7.82.58A12 12 0 0 0 12 .5z"
+                  />
+                </svg>
+              </a>
+              <a
+                class="icon-btn"
+                href="https://www.instagram.com/duyzxje_214/"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+              >
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.95.24 2.4.4.6.23 1.03.5 1.48.95.45.45.72.88.95 1.48.16.45.35 1.23.4 2.4.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.95-.4 2.4a3.9 3.9 0 0 1-.95 1.48 3.9 3.9 0 0 1-1.48.95c-.45.16-1.23.35-2.4.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.95-.24-2.4-.4a3.9 3.9 0 0 1-1.48-.95A3.9 3.9 0 0 1 2.67 20c-.16-.45-.35-1.23-.4-2.4C2.21 16.33 2.2 15.95 2.2 12.75s.01-3.58.07-4.85c.05-1.17.24-1.95.4-2.4.23-.6.5-1.03.95-1.48.45-.45.88-.72 1.48-.95.45-.16 1.23-.35 2.4-.4C8.42 2.21 8.8 2.2 12 2.2m0-1.7C8.75.5 8.34.51 7.06.57 5.77.63 4.86.84 4.1 1.12 3.28 1.42 2.6 1.82 1.93 2.49a5.6 5.6 0 0 0-1.37 2.17c-.3.76-.5 1.68-.56 2.96C-.06 9.9-.07 10.31-.07 12.75c0 2.44.01 2.85.07 4.13.06 1.28.27 2.2.56 2.96.3.76.7 1.44 1.37 2.11.67.67 1.35 1.07 2.11 1.37.76.29 1.68.5 2.96.56 1.28.06 1.69.07 4.13.07s2.85-.01 4.13-.07c1.28-.06 2.2-.27 2.96-.56a5.6 5.6 0 0 0 2.11-1.37 5.6 5.6 0 0 0 1.37-2.11c.29-.76.5-1.68.56-2.96.06-1.28.07-1.69.07-4.13s-.01-2.85-.07-4.13c-.06-1.28-.27-2.2-.56-2.96a5.6 5.6 0 0 0-1.37-2.11A5.6 5.6 0 0 0 20 1.12c-.76-.29-1.68-.5-2.96-.56C15.75.5 15.34.49 12 .49z"
+                  />
+                  <path
+                    d="M12 5.9A6.1 6.1 0 1 0 12 18.1 6.1 6.1 0 1 0 12 5.9m0-1.7a7.8 7.8 0 1 1 0 15.6 7.8 7.8 0 0 1 0-15.6zM18.4 4.9a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"
+                  />
+                </svg>
+              </a>
+              <a
+                class="icon-btn"
+                href="https://www.facebook.com/le.pham.thanh.duy.2024"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+              >
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M22 12.06C22 6.48 17.52 2 11.94 2S2 6.48 2 12.06C2 17.06 5.66 21.2 10.44 22v-7.05H7.9v-2.89h2.54v-2.2c0-2.5 1.49-3.88 3.78-3.88 1.1 0 2.25.2 2.25.2v2.48h-1.27c-1.25 0-1.64.78-1.64 1.58v1.82h2.8l-.45 2.89h-2.35V22C18.34 21.2 22 17.06 22 12.06z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="avatar-card">
+            <div class="avatar-wrap" aria-hidden="true">
+              <div class="avatar">TD</div>
+              <div class="avatar-sub">Ảnh đại diện (placeholder)</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================== ABOUT =================== -->
+      <section id="about" class="about">
+        <div class="container about-grid">
+          <!-- Left: Content -->
+          <div class="about-content">
+            <h2 class="about-title">About me</h2>
+            <p class="about-intro">
+              Xin chào! Tôi là Front-end Developer với niềm đam mê tạo ra những
+              trải nghiệm web tuyệt vời.
+            </p>
+            <div class="about-desc">
+              <p>
+                Tôi chuyên xây dựng giao diện web hiện đại, tập trung vào hiệu
+                năng và khả năng truy cập. Mỗi dòng code tôi viết đều hướng tới
+                mục tiêu tạo ra trải nghiệm người dùng mượt mà và đáng nhớ.
+              </p>
+              <p>
+                Với kinh nghiệm làm việc với
+                <strong>React, Next.js, TypeScript</strong> và
+                <strong>Tailwind CSS</strong>, tôi luôn tìm cách tối ưu hóa quy
+                trình phát triển và tạo ra những sản phẩm có chất lượng cao, dễ
+                bảo trì và mở rộng.
+              </p>
+            </div>       
+          </div>
+
+          <!-- Right: Info Card -->
+          <div class="about-info-card">
+            <div class="info-list">
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                    />
+                  </svg>
+                </div>
+                <div class="info-content">
+                  <span class="info-label">Họ tên</span>
+                  <span class="info-value">Lê Phạm Thanh Duy</span>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                    />
+                  </svg>
+                </div>
+                <div class="info-content">
+                  <span class="info-label">Email</span>
+                  <span class="info-value">
+                    <a href="mailto:thanhdui214@gmail.com"
+                      >thanhdui214@gmail.com</a
+                    >
+                  </span>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                    />
+                  </svg>
+                </div>
+                <div class="info-content">
+                  <span class="info-label">Location</span>
+                  <span class="info-value">TP. Hồ Chí Minh, Việt Nam</span>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"
+                    />
+                  </svg>
+                </div>
+                <div class="info-content">
+                  <span class="info-label">Position</span>
+                  <span class="info-value">Front-end Developer</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- <a href="#" class="btn-cv">
+              <svg viewBox="0 0 24 24">
+                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+              </svg>
+              Download CV
+            </a> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- =================== SKILL & ABILITIES =================== -->
+      <section id="skills" class="skills">
+        <div class="container">
+          <!-- ===== Front-end ===== -->
+          <div class="skills-section">
+            <div class="skills-text">
+              <h2 class="skills-title">Front-end</h2>
+              <p class="skills-desc">
+                Tập trung xây dựng giao diện hiện đại, hiệu năng và dễ mở rộng
+                với hệ sinh thái React/Next, TypeScript và util-first CSS.
+              </p>
+            </div>
+
+            <div class="tech-grid">
+              <!-- Hàng 1 -->
+              <a class="tech-card" href="#" title="HTML5">
+                <img
+                  alt="HTML5"
+                  src="https://cdn.simpleicons.org/html5/E34F26"
+                />
+                <span class="label">HTML5</span>
+              </a>
+              <a class="tech-card" href="#" title="CSS3">
+                <img alt="CSS3" src="https://cdn.simpleicons.org/css/1572B6" />
+                <span class="label">CSS</span>
+              </a>
+              <a class="tech-card" href="#" title="Tailwind CSS">
+                <img
+                  alt="Tailwind CSS"
+                  src="https://cdn.simpleicons.org/tailwindcss/38BDF8"
+                />
+                <span class="label">Tailwind</span>
+              </a>
+              <a class="tech-card" href="#" title="shadcn/ui">
+                <img
+                  alt="shadcn/ui"
+                  src="https://cdn.simpleicons.org/radixui/FFFFFF"
+                />
+                <span class="label">Shadcn</span>
+              </a>
+              <a class="tech-card" href="#" title="JavaScript">
+                <img
+                  alt="JavaScript"
+                  src="https://cdn.simpleicons.org/javascript/F7DF1E"
+                />
+                <span class="label">JavaScript</span>
+              </a>
+
+              <!-- Hàng 2 -->
+              <a class="tech-card" href="#" title="TypeScript">
+                <img
+                  alt="TypeScript"
+                  src="https://cdn.simpleicons.org/typescript/3178C6"
+                />
+                <span class="label">TypeScript</span>
+              </a>
+              <a class="tech-card" href="#" title="React">
+                <img
+                  alt="React"
+                  src="https://cdn.simpleicons.org/react/61DAFB"
+                />
+                <span class="label">React</span>
+              </a>
+              <a class="tech-card" href="#" title="Next.js">
+                <img
+                  alt="Next.js"
+                  src="https://cdn.simpleicons.org/nextdotjs/FFFFFF"
+                />
+                <span class="label">Next.js</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- ===== Back-end (đảo bố cục giống ảnh mẫu) ===== -->
+          <div class="skills-section skills-section--alt">
+            <div class="tech-grid">
+              <a class="tech-card" href="#" title="Node.js">
+                <img
+                  alt="Node.js"
+                  src="https://cdn.simpleicons.org/nodedotjs/339933"
+                />
+                <span class="label">Node.js</span>
+              </a>
+              <a class="tech-card" href="#" title="Express">
+                <img
+                  alt="Express"
+                  src="https://cdn.simpleicons.org/express/FFFFFF"
+                />
+                <span class="label">Express</span>
+              </a>
+              <a class="tech-card" href="#" title="MongoDB">
+                <img
+                  alt="MongoDB"
+                  src="https://cdn.simpleicons.org/mongodb/47A248"
+                />
+                <span class="label">MongoDB</span>
+              </a>
+              <a class="tech-card" href="#" title="MySQL">
+                <img
+                  alt="MySQL"
+                  src="https://cdn.simpleicons.org/mysql/4479A1"
+                />
+                <span class="label">MySQL</span>
+              </a>
+            </div>
+
+            <div class="skills-text">
+              <h2 class="skills-title">Back-end</h2>
+              <p class="skills-desc">
+                Kiến trúc API nhẹ, dễ bảo trì với Node/Express; lưu trữ dữ liệu
+                trên MongoDB và MySQL cho cả use-case linh hoạt lẫn quan hệ chặt
+                chẽ.
+              </p>
+            </div>
+          </div>
+
+          <!-- ===== Tool ===== -->
+          <div class="skills-section">
+            <div class="skills-text">
+              <h2 class="skills-title">Tool</h2>
+              <p class="skills-desc">
+                Bộ công cụ phục vụ thiết kế và cộng tác: tạo prototype nhanh,
+                quản lý phiên bản minh bạch.
+              </p>
+            </div>
+
+            <div class="tech-grid">
+              <a class="tech-card" href="#" title="Figma">
+                <img
+                  alt="Figma"
+                  src="https://cdn.simpleicons.org/figma/F24E1E"
+                />
+                <span class="label">Figma</span>
+              </a>
+              <a class="tech-card" href="#" title="Git">
+                <img alt="Git" src="https://cdn.simpleicons.org/git/F05032" />
+                <span class="label">Git</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects">
+        <div class="container">
+          <h2 class="projects-heading">Projects</h2>
+
+          <!-- === Project: Veltra === -->
+          <article class="project">
+            <div class="project-media">
+              <div class="mockup">
+                <span>Ảnh demo</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-header">
+                <span class="year-badge">2024</span>
+                <a class="bubble bubble--github" title="GitHub"
+                  ><img
+                    alt="GitHub"
+                    src="https://cdn.simpleicons.org/github/FFFFFF"
+                /></a>
+              </div>
+              <h3 class="project-title">Veltra</h3>
+              <p class="project-desc">
+                Mạng xã hội hỗ trợ nhắn tin (emoji, hình ảnh…), gọi điện, đăng
+                bài, bình luận và thả cảm xúc theo thời gian thực. Hệ thống còn
+                có các tính năng bảo mật và trang admin để quản trị nội dung.
+                Front-end xây dựng với TypeScript, React.js và Socket.IO.
+              </p>
+              <div class="tech-bubbles" aria-label="Công nghệ sử dụng">
+                <a class="bubble" title="TypeScript"
+                  ><img
+                    alt="TypeScript"
+                    src="https://cdn.simpleicons.org/typescript/3178C6"
+                /></a>
+                <a class="bubble" title="React"
+                  ><img
+                    alt="React"
+                    src="https://cdn.simpleicons.org/react/61DAFB"
+                /></a>
+                <a class="bubble" title="Tailwind CSS"
+                  ><img
+                    alt="Tailwind CSS"
+                    src="https://cdn.simpleicons.org/tailwindcss/38BDF8"
+                /></a>
+                <a class="bubble" title="shadcn/ui"
+                  ><img
+                    alt="shadcn/ui"
+                    src="https://cdn.simpleicons.org/radixui/FFFFFF"
+                /></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- === Project: Sevina (đảo bố cục) === -->
+          <article class="project project--alt">
+            <div class="project-media">
+              <div class="mockup">
+                <span>Ảnh demo</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-header">
+                <span class="year-badge">2024</span>
+                <a class="bubble bubble--github" title="GitHub"
+                  ><img
+                    alt="GitHub"
+                    src="https://cdn.simpleicons.org/github/FFFFFF"
+                /></a>
+              </div>
+              <h3 class="project-title">Sevina</h3>
+              <p class="project-desc">
+                Front-end phát triển bằng TypeScript, ReactJS, Redux Toolkit và
+                Tailwind CSS, mang lại trải nghiệm mượt mà; tích hợp GoongMap
+                API và cơ chế quản lý trạng thái thuê/mượn hiệu quả.
+              </p>
+              <div class="tech-bubbles" aria-label="Công nghệ sử dụng">
+                <a class="bubble" title="TypeScript"
+                  ><img
+                    alt="TypeScript"
+                    src="https://cdn.simpleicons.org/typescript/3178C6"
+                /></a>
+                <a class="bubble" title="React"
+                  ><img
+                    alt="React"
+                    src="https://cdn.simpleicons.org/react/61DAFB"
+                /></a>
+                <a class="bubble" title="Tailwind CSS"
+                  ><img
+                    alt="Tailwind CSS"
+                    src="https://cdn.simpleicons.org/tailwindcss/38BDF8"
+                /></a>
+                <a class="bubble" title="shadcn/ui"
+                  ><img
+                    alt="shadcn/ui"
+                    src="https://cdn.simpleicons.org/radixui/FFFFFF"
+                /></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- === Project: PreziQ === -->
+          <article class="project">
+            <div class="project-media">
+              <div class="mockup">
+                <span>Ảnh demo</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-header">
+                <span class="year-badge">2025</span>
+                <a class="bubble bubble--github" title="GitHub"
+                  ><img
+                    alt="GitHub"
+                    src="https://cdn.simpleicons.org/github/FFFFFF"
+                /></a>
+              </div>
+              <h3 class="project-title">PreziQ</h3>
+              <p class="project-desc">
+                Nền tảng trắc nghiệm &amp; trình chiếu tương tác, xây dựng bằng
+                Next.js, TypeScript, Tailwind CSS và triển khai trên Vercel.
+              </p>
+              <div class="tech-bubbles" aria-label="Công nghệ sử dụng">
+                <a class="bubble" title="TypeScript"
+                  ><img
+                    alt="TypeScript"
+                    src="https://cdn.simpleicons.org/typescript/3178C6"
+                /></a>
+                <a class="bubble" title="Next.js"
+                  ><img
+                    alt="Next.js"
+                    src="https://cdn.simpleicons.org/nextdotjs/FFFFFF"
+                /></a>
+                <a class="bubble" title="Tailwind CSS"
+                  ><img
+                    alt="Tailwind CSS"
+                    src="https://cdn.simpleicons.org/tailwindcss/38BDF8"
+                /></a>
+                <a class="bubble" title="shadcn/ui"
+                  ><img
+                    alt="shadcn/ui"
+                    src="https://cdn.simpleicons.org/radixui/FFFFFF"
+                /></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- === Project: Jewelry (mô tả dựa ảnh yêu cầu) === -->
+          <article class="project project--alt">
+            <div class="project-media">
+              <div class="mockup">
+                <span>Ảnh demo</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-header">
+                <span class="year-badge">2025</span>
+                <a class="bubble bubble--github" title="GitHub"
+                  ><img
+                    alt="GitHub"
+                    src="https://cdn.simpleicons.org/github/FFFFFF"
+                /></a>
+              </div>
+              <h3 class="project-title">Jewelry</h3>
+              <p class="project-desc">
+                Hệ thống hỗ trợ định giá kim cương tại cửa hàng: trang giới
+                thiệu &amp; tra cứu, ước lượng giá trị theo nhiều tiêu chí
+                (nguồn gốc, dáng cắt, kích thước, trọng lượng, màu sắc, độ tinh
+                khiết, tỉ lệ, độ bóng/đối xứng…), quản lý quy trình tiếp
+                nhận-định giá-trả kết quả, in giấy định giá/biên nhận, xử lý
+                thất lạc biên nhận, quản lý bảng giá &amp; danh mục thông số,
+                đồng bộ dữ liệu giá và dashboard thống kê.
+              </p>
+              <div class="tech-bubbles" aria-label="Công nghệ sử dụng">
+                <a class="bubble" title="TypeScript"
+                  ><img
+                    alt="TypeScript"
+                    src="https://cdn.simpleicons.org/typescript/3178C6"
+                /></a>
+                <a class="bubble" title="Next.js"
+                  ><img
+                    alt="Next.js"
+                    src="https://cdn.simpleicons.org/nextdotjs/FFFFFF"
+                /></a>
+                <a class="bubble" title="Tailwind CSS"
+                  ><img
+                    alt="Tailwind CSS"
+                    src="https://cdn.simpleicons.org/tailwindcss/38BDF8"
+                /></a>
+                <a class="bubble" title="shadcn/ui"
+                  ><img
+                    alt="shadcn/ui"
+                    src="https://cdn.simpleicons.org/radixui/FFFFFF"
+                /></a>
+                <a class="bubble" title="Express"
+                  ><img
+                    alt="Express"
+                    src="https://cdn.simpleicons.org/express/FFFFFF"
+                /></a>
+                <a class="bubble" title="MySQL"
+                  ><img
+                    alt="MySQL"
+                    src="https://cdn.simpleicons.org/mysql/4479A1"
+                /></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="container">
+          <div class="contact-grid">
+            <!-- Left: content -->
+            <aside class="contact-pane">
+              <h2 class="contact-title">Sẵn sàng hợp tác?</h2>
+              <p class="contact-sub">
+                Hãy mô tả nhu cầu của bạn càng chi tiết càng tốt. Mình sẽ phản
+                hồi trong vòng <strong>24 giờ</strong>.
+              </p>
+
+              <ul class="contact-list" aria-label="Thông tin liên hệ">
+                <li>
+                  <span class="ico" aria-hidden="true">
+                    <!-- mail icon -->
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5Z"
+                      />
+                    </svg>
+                  </span>
+                  <a href="mailto:thanhdui@example.com" class="link"
+                    >thanhdui@example.com</a
+                  >
+                </li>
+                <li>
+                  <span class="ico" aria-hidden="true">
+                    <!-- phone icon -->
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M6.6 10.8a15.53 15.53 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.56 3.58.56a1 1 0 0 1 1 1V20a2 2 0 0 1-2 2C9.61 22 2 14.39 2 5a2 2 0 0 1 2-2h3.48a1 1 0 0 1 1 1c0 1.25.19 2.46.56 3.58a1 1 0 0 1-.24 1.02l-2.2 2.2Z"
+                      />
+                    </svg>
+                  </span>
+                  <a href="tel:+84999999999" class="link">+84 999 999 999</a>
+                </li>
+              </ul>
+            </aside>
+
+            <!-- Right: form -->
+            <div class="form-card">
+              <form class="contact-form" autocomplete="on">
+                <h3 class="form-title">Let's Talk</h3>
+
+                <div class="row two">
+                  <label class="field">
+                    <span>First Name</span>
+                    <input
+                      type="text"
+                      name="firstName"
+                      placeholder="First name"
+                    />
+                  </label>
+                  <label class="field">
+                    <span>Last Name</span>
+                    <input
+                      type="text"
+                      name="lastName"
+                      placeholder="Last name"
+                    />
+                  </label>
+                </div>
+
+                <label class="field">
+                  <span>Email</span>
+                  <input type="email" name="email" placeholder="Your email" />
+                </label>
+
+                <label class="field">
+                  <span>Message</span>
+                  <textarea
+                    name="message"
+                    rows="5"
+                    placeholder="Your message"
+                  ></textarea>
+                </label>
+
+                <button class="btn-send" type="submit">
+                  Send Message
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m2 21 20-9L2 3v7l14 2-14 2v7z" />
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Brand Column -->
+          <div class="footer-brand">
+            <div class="footer-logo">thanh<span class="dot">.</span>dui</div>
+            <p class="footer-tagline">
+              Xây dựng giao diện web hiện đại với mã sạch và trải nghiệm người
+              dùng tối ưu.
+            </p>
+            <div class="footer-socials" aria-label="Mạng xã hội">
+              <a
+                class="footer-social-btn"
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+              >
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4zM8 8h3.8v2.2h.06c.53-1 1.84-2.2 3.78-2.2C20 8 24 10.42 24 16.08V24h-4v-7.2c0-1.72-.03-3.94-2.4-3.94-2.4 0-2.77 1.87-2.77 3.8V24h-4V8z"
+                  />
+                </svg>
+              </a>
+              <a
+                class="footer-social-btn"
+                href="https://github.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="GitHub"
+              >
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.2c-3.34.73-4.04-1.61-4.04-1.61-.55-1.41-1.34-1.79-1.34-1.79-1.1-.77.08-.75.08-.75 1.22.09 1.86 1.26 1.86 1.26 1.08 1.86 2.83 1.32 3.52 1.01.11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0C18.12 5.6 19.12 5.92 19.12 5.92c.66 1.65.24 2.87.12 3.17.77.84 1.24 1.9 1.24 3.22 0 4.61-2.8 5.62-5.48 5.92.43.38.82 1.11.82 2.24v3.32c0 .32.21.7.82.58A12 12 0 0 0 12 .5z"
+                  />
+                </svg>
+              </a>
+              <a
+                class="footer-social-btn"
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+              >
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.95.24 2.4.4.6.23 1.03.5 1.48.95.45.45.72.88.95 1.48.16.45.35 1.23.4 2.4.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.95-.4 2.4a3.9 3.9 0 0 1-.95 1.48 3.9 3.9 0 0 1-1.48.95c-.45.16-1.23.35-2.4.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.95-.24-2.4-.4a3.9 3.9 0 0 1-1.48-.95A3.9 3.9 0 0 1 2.67 20c-.16-.45-.35-1.23-.4-2.4C2.21 16.33 2.2 15.95 2.2 12.75s.01-3.58.07-4.85c.05-1.17.24-1.95.4-2.4.23-.6.5-1.03.95-1.48.45-.45.88-.72 1.48-.95.45-.16 1.23-.35 2.4-.4C8.42 2.21 8.8 2.2 12 2.2m0-1.7C8.75.5 8.34.51 7.06.57 5.77.63 4.86.84 4.1 1.12 3.28 1.42 2.6 1.82 1.93 2.49a5.6 5.6 0 0 0-1.37 2.17c-.3.76-.5 1.68-.56 2.96C-.06 9.9-.07 10.31-.07 12.75c0 2.44.01 2.85.07 4.13.06 1.28.27 2.2.56 2.96.3.76.7 1.44 1.37 2.11.67.67 1.35 1.07 2.11 1.37.76.29 1.68.5 2.96.56 1.28.06 1.69.07 4.13.07s2.85-.01 4.13-.07c1.28-.06 2.2-.27 2.96-.56a5.6 5.6 0 0 0 2.11-1.37 5.6 5.6 0 0 0 1.37-2.11c.29-.76.5-1.68.56-2.96.06-1.28.07-1.69.07-4.13s-.01-2.85-.07-4.13c-.06-1.28-.27-2.2-.56-2.96a5.6 5.6 0 0 0-1.37-2.11A5.6 5.6 0 0 0 20 1.12c-.76-.29-1.68-.5-2.96-.56C15.75.5 15.34.49 12 .49z"
+                  />
+                  <path
+                    d="M12 5.9A6.1 6.1 0 1 0 12 18.1 6.1 6.1 0 1 0 12 5.9m0-1.7a7.8 7.8 0 1 1 0 15.6 7.8 7.8 0 0 1 0-15.6zM18.4 4.9a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"
+                  />
+                </svg>
+              </a>
+              <a
+                class="footer-social-btn"
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+              >
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M22 12.06C22 6.48 17.52 2 11.94 2S2 6.48 2 12.06C2 17.06 5.66 21.2 10.44 22v-7.05H7.9v-2.89h2.54v-2.2c0-2.5 1.49-3.88 3.78-3.88 1.1 0 2.25.2 2.25.2v2.48h-1.27c-1.25 0-1.64.78-1.64 1.58v1.82h2.8l-.45 2.89h-2.35V22C18.34 21.2 22 17.06 22 12.06z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#about">About Me</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul class="footer-links">
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">UI/UX Design</a></li>
+              <li><a href="#">Frontend Development</a></li>
+              <li><a href="#">React Development</a></li>
+              <li><a href="#">Consulting</a></li>
+            </ul>
+          </div>
+
+          <!-- Resources -->
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul class="footer-links">
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Case Studies</a></li>
+              <li><a href="#">Newsletter</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <p class="footer-copy">
+            © <span id="year"></span> <strong>Thanh Dui</strong>. Made with
+            <span class="heart">❤️</span> in Vietnam
+          </p>
+          <ul class="footer-links-bottom">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // ===== Year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // ===== Theme toggle
+      const htmlEl = document.documentElement;
+      const themeBtn = document.getElementById('themeBtn');
+      const themeIcon = document.getElementById('themeIcon');
+      function applyTheme(theme) {
+        htmlEl.setAttribute('data-theme', theme);
+        themeIcon.textContent = theme === 'dark' ? '🌙' : '🌞';
+        localStorage.setItem('theme', theme);
+      }
+      (() => {
+        const saved = localStorage.getItem('theme');
+        if (saved) {
+          applyTheme(saved);
+        } else {
+          const prefersDark = window.matchMedia(
+            '(prefers-color-scheme: dark)'
+          ).matches;
+          applyTheme(prefersDark ? 'dark' : 'light');
+        }
+      })();
+      themeBtn.addEventListener('click', () => {
+        const next =
+          htmlEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+      });
+
+      // ===== Mobile drawer
+      const menuBtn = document.getElementById('menuBtn');
+      const drawer = document.getElementById('drawer');
+      menuBtn.addEventListener('click', () => drawer.classList.toggle('open'));
+      drawer.addEventListener('click', (e) => {
+        if (e.target === drawer) drawer.classList.remove('open');
+      });
+
+      // ===== Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener('click', (e) => {
+          const id = a.getAttribute('href').slice(1);
+          const el = document.getElementById(id);
+          if (el) {
+            e.preventDefault();
+            drawer.classList.remove('open');
+            window.scrollTo({
+              top: el.getBoundingClientRect().top + window.pageYOffset - 60,
+              behavior: 'smooth',
+            });
+          }
+        });
+      });
+
+      // ===== ScrollSpy
+      const spyLinks = Array.from(document.querySelectorAll('[data-spy]'));
+      const sections = spyLinks.map((l) =>
+        document.querySelector(l.getAttribute('href'))
+      );
+      const opts = { rootMargin: '-50% 0px -45% 0px', threshold: 0 };
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.id;
+          spyLinks.forEach((a) => {
+            if (a.getAttribute('href') === '#' + id) {
+              a.classList.toggle('active', entry.isIntersecting);
+            }
+          });
+        });
+      }, opts);
+      sections.forEach((sec) => sec && obs.observe(sec));
+
+      // ===== Hero text swap
+      const swapText = document.getElementById('swapText');
+      const labels = ['Thanh Dui', 'Front-end Developer'];
+      let idx = 0;
+      setInterval(() => {
+        idx = (idx + 1) % labels.length;
+        swapText.style.opacity = 0;
+        setTimeout(() => {
+          swapText.textContent = labels[idx];
+          swapText.style.opacity = 1;
+        }, 180);
+      }, 2200);
+    </script>
+  </body>
+</html>
