@@ -135,9 +135,27 @@ html[data-theme='light'] header {
   height: var(--header-h);
 }
 .brand {
-  font-weight: 800;
-  letter-spacing: 0.4px;
+  display: inline-flex;
+  align-items: center;
   color: var(--text-strong);
+  transition: color var(--trans);
+}
+.brand .logo-svg {
+  height: 32px;
+  width: auto;
+  display: block;
+  transition: filter var(--trans);
+}
+/* Dark theme: logo đen → trắng */
+html[data-theme='dark'] .brand .logo-svg {
+  filter: invert(1) brightness(1.1);
+}
+/* Light theme: giữ nguyên logo đen */
+html[data-theme='light'] .brand .logo-svg {
+  filter: none;
+}
+.brand:hover .logo-svg {
+  filter: invert(0.5) sepia(1) saturate(5) hue-rotate(160deg) brightness(1.2);
 }
 .brand .dot {
   color: var(--primary);
@@ -399,6 +417,12 @@ html[data-theme='light'] .avatar-card {
 html[data-theme='light'] .avatar-wrap {
   background: linear-gradient(180deg, #f8feff, #edfaff);
   border-color: #e7f8fb;
+}
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .avatar {
   position: absolute;
@@ -914,11 +938,18 @@ html[data-theme='light'] .project {
   color: #cfd6de;
   font-weight: 700;
   letter-spacing: 0.4px;
+  overflow: hidden;
 }
 html[data-theme='light'] .project-media .mockup {
   background: linear-gradient(180deg, #f7fbff, #eef5ff);
   color: #5a6673;
   border-color: #e9eef4;
+}
+.project-media .mockup img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* body */
@@ -1288,23 +1319,14 @@ footer::before {
   opacity: 0.6;
 }
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+/* Footer content - 1 cột dọc như mobile */
+.footer-content {
+  display: flex;
+  flex-direction: column;
   gap: 40px;
   margin-bottom: 40px;
-}
-@media (max-width: 1024px) {
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-  }
-}
-@media (max-width: 640px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
+  align-items: center;
+  text-align: center;
 }
 
 /* Footer brand */
@@ -1312,13 +1334,27 @@ footer::before {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  align-items: center;
 }
 .footer-logo {
-  font-size: 28px;
-  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
   color: var(--text-strong);
-  letter-spacing: 0.4px;
   margin-bottom: 4px;
+}
+.footer-logo .logo-svg {
+  height: 40px;
+  width: auto;
+  display: block;
+  transition: filter var(--trans);
+}
+/* Dark theme: logo đen → trắng */
+html[data-theme='dark'] .footer-logo .logo-svg {
+  filter: invert(1) brightness(1.1);
+}
+/* Light theme: giữ nguyên logo đen */
+html[data-theme='light'] .footer-logo .logo-svg {
+  filter: none;
 }
 .footer-logo .dot {
   color: var(--primary);
@@ -1326,13 +1362,14 @@ footer::before {
 .footer-tagline {
   font-size: 16px;
   color: var(--text-muted);
-  max-width: 32ch;
+  max-width: 40ch;
   line-height: 1.6;
 }
 .footer-socials {
   display: flex;
   gap: 10px;
   margin-top: 8px;
+  justify-content: center;
 }
 .footer-social-btn {
   width: 40px;
@@ -1360,19 +1397,19 @@ html[data-theme='light'] .footer-social-btn {
   background: rgba(0, 229, 254, 0.08);
 }
 
-/* Footer columns */
-.footer-col h4 {
-  font-size: 16px;
-  font-weight: 800;
-  color: var(--text-strong);
-  margin-bottom: 16px;
-  letter-spacing: 0.3px;
+/* Footer navigation (Quick Links) */
+.footer-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .footer-links {
   list-style: none;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
 .footer-links li a {
   color: var(--text-muted);
@@ -1404,8 +1441,8 @@ html[data-theme='light'] .footer-social-btn {
   padding-top: 28px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 16px;
 }
@@ -1437,21 +1474,6 @@ html[data-theme='light'] .footer-bottom {
   40% {
     transform: scale(1);
   }
-}
-
-.footer-links-bottom {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-}
-.footer-links-bottom a {
-  color: var(--text-muted);
-  font-size: 14px;
-  font-weight: 600;
-  transition: color var(--trans);
-}
-.footer-links-bottom a:hover {
-  color: var(--primary);
 }
 
 @media (max-width: 640px) {
