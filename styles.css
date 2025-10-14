@@ -447,6 +447,26 @@ html[data-theme='light'] .avatar-wrap {
 .about {
   width: 100%;
 }
+.about-title {
+  font-size: clamp(32px, 4.8vw, 56px);
+  font-weight: 900;
+  color: var(--text-strong);
+  margin-bottom: 32px;
+  line-height: 1.1;
+}
+.about-title::after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: min(280px, 60%);
+  margin-top: 12px;
+  background: linear-gradient(
+    90deg,
+    var(--primary) 0%,
+    rgba(0, 229, 254, 0.3) 100%
+  );
+  border-radius: 2px;
+}
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -465,26 +485,6 @@ html[data-theme='light'] .avatar-wrap {
   display: flex;
   flex-direction: column;
   gap: 24px;
-}
-.about-title {
-  font-size: clamp(32px, 4.8vw, 56px);
-  font-weight: 900;
-  color: var(--text-strong);
-  margin-bottom: 8px;
-  line-height: 1.1;
-}
-.about-title::after {
-  content: '';
-  display: block;
-  height: 3px;
-  width: min(280px, 60%);
-  margin-top: 12px;
-  background: linear-gradient(
-    90deg,
-    var(--primary) 0%,
-    rgba(0, 229, 254, 0.3) 100%
-  );
-  border-radius: 2px;
 }
 .about-intro {
   font-size: 20px;
@@ -716,6 +716,13 @@ html[data-theme='light'] .logo {
 @media (max-width: 1024px) {
   .skills-section--alt {
     grid-template-columns: 1fr;
+  }
+  /* Trên mobile: text trước, grid sau */
+  .skills-section--alt .tech-grid {
+    order: 2;
+  }
+  .skills-section--alt .skills-text {
+    order: 1;
   }
 }
 
@@ -1094,6 +1101,9 @@ html[data-theme='light'] .contact-list .ico {
   background: #0b1220;
   border-color: #0f1a2e;
 }
+html[data-theme='light'] .contact-list .ico svg {
+  fill: #fff;
+}
 .contact-list .link {
   font-weight: 800;
   color: var(--text-strong);
@@ -1349,7 +1359,7 @@ footer::before {
   transition: filter var(--trans);
 }
 /* Dark theme: logo đen → trắng */
-html[data-theme='dark'] .footer-logo .logo-svg {
+html[data-mutedtheme='dark'] .footer-logo .logo-svg {
   filter: invert(1) brightness(1.1);
 }
 /* Light theme: giữ nguyên logo đen */

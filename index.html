@@ -5,221 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Portfolio – Thanh Duy</title>
     <link rel="stylesheet" href="styles.css" />
-    <!-- <style>
-    :root{
-      /* Colors */
-      --primary:#00e5fe;
-      --text-strong-light:#111;
-      --text-muted-light:#666;
-      --bg-light:#fff;
-
-      --text-strong-dark:#fff;
-      --text-muted-dark:#cdd2d6;
-      --bg-dark: #05070a;
-
-      /* Layout */
-      --maxw: 1100px;
-      --radius: 14px;
-      --header-h: 64px;
-      --shadow: 0 10px 30px rgba(0,0,0,.25);
-      --trans: 220ms ease;
-      --section-pad: 72px; /* top/bottom padding (cộng thêm min-height) */
-    }
-
-    /* Theme */
-    html[data-theme="light"]{
-      --bg: var(--bg-light);
-      --text-strong: var(--text-strong-light);
-      --text-muted: var(--text-muted-light);
-    }
-    html[data-theme="dark"]{
-      --bg: var(--bg-dark);
-      --text-strong: var(--text-strong-dark);
-      --text-muted: var(--text-muted-dark);
-    }
-
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: "Source Sans 3","Source Sans Pro",system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans",sans-serif;
-      background: var(--bg);
-      color: var(--text-muted);
-      line-height:1.6;
-      overflow-x:hidden;
-    }
-
-    /* Dark bg with glowing dots */
-    html[data-theme="dark"] body::before{
-      content:"";
-      position:fixed; inset:0; z-index:-2;
-      background:
-        radial-gradient(900px 500px at 20% 10%, rgba(0,229,254,.08), transparent 60%),
-        radial-gradient(800px 500px at 80% 20%, rgba(255,255,255,.05), transparent 60%),
-        radial-gradient(700px 400px at 60% 80%, rgba(0,229,254,.05), transparent 60%),
-        linear-gradient(180deg, #030406 0%, #0a0f14 100%);
-      filter: saturate(110%);
-    }
-    html[data-theme="light"] body::before{
-      content:""; position:fixed; inset:0; z-index:-2;
-      background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
-    }
-
-    a{color:inherit; text-decoration:none}
-    img{max-width:100%; display:block}
-    .container{width:100%; max-width:var(--maxw); margin:0 auto; padding:0 20px}
-
-    /* HEADER */
-    header{
-      position:sticky; top:0; z-index:50; height:var(--header-h);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-    html[data-theme="light"] header{ border-bottom:1px solid #eee}
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      height:var(--header-h);
-    }
-    .brand{ font-weight:800; letter-spacing:.4px; color: var(--text-strong) }
-    .brand .dot{ color:var(--primary)}
-    .nav ul{ list-style:none; margin:0; padding:0; display:flex; gap:14px }
-    .nav a{
-      padding:10px 6px; position:relative; font-weight:600; color:var(--text-muted);
-      transition: color var(--trans);
-    }
-    .nav a:hover{ color:var(--text-strong)}
-    .nav a::after{
-      content:""; position:absolute; left:0; right:0; bottom:2px; height:2px;
-      background: var(--primary); transform: scaleX(0); transform-origin: center;
-      transition: transform 240ms ease; border-radius:2px;
-    }
-    .nav a.active{ color:var(--text-strong)}
-    .nav a.active::after{ transform: scaleX(1)}
-    .right{ display:flex; align-items:center; gap:10px }
-    .btn-theme{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 12px; border:1px solid rgba(255,255,255,.12);
-      border-radius: 999px; cursor:pointer; background: transparent; color: var(--text-muted);
-      transition: border-color var(--trans), color var(--trans), background var(--trans);
-    }
-    html[data-theme="light"] .btn-theme{ border-color:#ddd}
-    .btn-theme:hover{ color:var(--text-strong); border-color: var(--primary)}
-    .menu-toggle{ display:none }
-
-    @media (max-width: 920px){
-      .nav ul{ display:none}
-      .menu-toggle{ display:inline-flex; padding:8px 10px; border:1px solid rgba(255,255,255,.12); border-radius:10px; cursor:pointer}
-      html[data-theme="light"] .menu-toggle{ border-color:#ddd}
-      .drawer{ position:fixed; inset: var(--header-h) 0 auto 0; background: rgba(0,0,0,.6); display:none }
-      .drawer.open{ display:block}
-      .drawer-nav{
-        margin:12px; border-radius:14px; padding:12px;
-        background: rgba(20,24,28,.85); backdrop-filter: blur(12px);
-      }
-      html[data-theme="light"] .drawer-nav{ background: #fff; border:1px solid #eee}
-      .drawer-nav a{ display:block; padding:12px 10px; border-radius:10px}
-      .drawer-nav a.active{ background: rgba(0,229,254,.12)}
-      html[data-theme="light"] .drawer-nav a.active{ background:#e6fbff}
-    }
-
-    /* ===== Sections: min-height 100vh & vertical centering ===== */
-    section{
-      min-height: 100vh; /* theo yêu cầu “1 vh” mình hiểu là 100vh */
-      display:flex; align-items:center; /* canh giữa theo trục dọc */
-      padding: var(--section-pad) 0; /* vẫn có padding khi viewport thấp */
-    }
-
-    h1,h2,h3{ margin:0 0 10px; color: var(--text-strong)}
-    .lede{ font-size:18px; margin:6px 0 24px}
-    .muted{ color: var(--text-muted)}
-    .primary{ color: var(--primary) }
-
-    /* HERO */
-    .hero{ width:100% }
-    .hero-grid{
-      display:grid; grid-template-columns: 1.15fr .85fr; gap:28px; align-items:center;
-    }
-    @media (max-width: 920px){ .hero-grid{ grid-template-columns: 1fr; gap:20px }}
-    .badge{
-      display:inline-flex; align-items:center; gap:8px;
-      border:1px solid rgba(255,255,255,.12);
-      padding:6px 10px; border-radius:999px; font-weight:600; font-size:14px; color:var(--text-muted);
-    }
-    html[data-theme="light"] .badge{ border-color:#eee}
-    .title{ font-size: clamp(28px, 4.6vw, 44px); font-weight: 900; line-height:1.15; }
-    .swap-line{ display:inline-block; min-width: 10ch; font-weight:900; color: var(--primary); animation: fadeIn 320ms ease }
-    @keyframes fadeIn{ from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:translateY(0)} }
-    .socials{ display:flex; gap:12px; margin-top:14px}
-    .icon-btn{
-      width:40px; height:40px; border-radius:10px; display:grid; place-items:center;
-      border:1px solid rgba(255,255,255,.12); cursor:pointer; transition: transform var(--trans), border-color var(--trans);
-    }
-    html[data-theme="light"] .icon-btn{ border-color:#e7e7e7}
-    .icon-btn:hover{ transform: translateY(-2px); border-color: var(--primary) }
-
-    /* Avatar card */
-    .avatar-card{
-      position:relative; border-radius: var(--radius); overflow:hidden;
-      padding:16px; isolation:isolate;
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.00));
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow: var(--shadow);
-    }
-    html[data-theme="light"] .avatar-card{ background:#fff; border:1px solid #eee; }
-    .avatar-wrap{
-      aspect-ratio: 1/1; border-radius: 18px; overflow:hidden; position:relative;
-      background: radial-gradient(40% 40% at 60% 30%, rgba(0,229,254,.35), transparent 60%),
-                  radial-gradient(50% 50% at 30% 70%, rgba(255,255,255,.18), transparent 60%),
-                  linear-gradient(180deg, #0b1116, #070b0f);
-      border:1px solid rgba(255,255,255,.08);
-    }
-    html[data-theme="light"] .avatar-wrap{ background: linear-gradient(180deg, #f8feff, #edfaff); border-color:#e7f8fb; }
-    .avatar{ position:absolute; inset:0; display:grid; place-items:center; color:#fff; font-weight:900; font-size: clamp(40px, 8vw, 72px); letter-spacing:2px; text-shadow: 0 6px 24px rgba(0,229,254,.35); }
-    .avatar-sub{ position:absolute; bottom:12px; right:12px; font-size:12px; color:var(--text-muted)}
-
-    /* ABOUT */
-    .about{ width:100% }
-    .about-grid{
-      display:grid; grid-template-columns: .7fr 1.3fr; gap:28px; align-items:center;
-    }
-    @media (max-width: 920px){ .about-grid{ grid-template-columns: 1fr; gap:16px }}
-    .kv{
-      display:grid; gap:8px; background: rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.08);
-      padding:16px; border-radius: var(--radius);
-    }
-    html[data-theme="light"] .kv{ background:#fff; border-color:#eee}
-    .kv .row{ display:flex; gap:10px; align-items:center}
-    .kv .key{ width:110px; color:var(--text-muted); font-weight:600}
-    .kv .val{ color:var(--text-strong); font-weight:700}
-    .about .desc{ max-width: 64ch; }
-    .about .desc p{ margin: 8px 0 }
-
-    /* SKILLS */
-    .skills{ width:100% }
-    .skill-groups{
-      display:grid; grid-template-columns: repeat(3, 1fr); gap:20px;
-    }
-    @media (max-width: 920px){ .skill-groups{ grid-template-columns: 1fr }}
-    .skill-card{
-      background: rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.08);
-      border-radius: var(--radius); padding:16px 16px 20px;
-    }
-    html[data-theme="light"] .skill-card{ background:#fff; border-color:#eee}
-    .skill-card h3{ margin-bottom:8px }
-    .logos{ display:flex; flex-wrap:wrap; gap:12px }
-    .logo{
-      width:56px; height:56px; display:grid; place-items:center; border-radius:12px;
-      background: rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-      transition: transform var(--trans), box-shadow var(--trans), border-color var(--trans), background var(--trans);
-    }
-    html[data-theme="light"] .logo{ background:#fafafa; border-color:#eee }
-    .logo img{ width:28px; height:28px }
-    .logo:hover{ transform: translateY(-3px); border-color: var(--primary); box-shadow: 0 8px 22px rgba(0,229,254,.12) }
-
-    /* Helpers */
-    .sr-only{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; clip-path:inset(50%); border:0; padding:0; margin:-1px; }
-  </style> -->
   </head>
   <body>
     <!-- =================== HEADER =================== -->
@@ -271,12 +56,13 @@
               Tôi là <span class="swap-line" id="swapText">Thanh Duy</span
               ><br />
               <span class="muted"
-                >Xây dựng giao diện web hiện đại, tối ưu và dễ mở rộng.</span
+                >Mang sản phẩm số đến gần hơn với người dùng.</span
               >
             </h1>
             <p class="lede">
-              Tập trung Front-end (React/Next.js, TypeScript, Tailwind CSS). Yêu
-              thích trải nghiệm mượt mà, mã sạch, và thiết kế có hệ thống.
+              Tôi là Thanh Duy, một lập trình viên Front-end, chuyên biến những
+              ý tưởng sáng tạo thành các giao diện web mượt mà, hiệu quả và mang
+              lại trải nghiệm tốt nhất cho người dùng.
             </p>
             <div class="socials" aria-label="Mạng xã hội">
               <a
@@ -371,26 +157,35 @@
 
       <!-- =================== ABOUT =================== -->
       <section id="about" class="about">
-        <div class="container about-grid">
-          <!-- Left: Content -->
-          <div class="about-content">
-            <h2 class="about-title">About me</h2>
-            <p class="about-intro">
-              Xin chào! Tôi là Front-end Developer với niềm đam mê tạo ra những
-              trải nghiệm web tuyệt vời.
-            </p>
-            <div class="about-desc">
+        <div class="container">
+          <h2 class="about-title">About me</h2>
+          
+          <div class="about-grid">
+            <!-- Left: Content -->
+            <div class="about-content">
+              <p class="about-intro">
+                Xin chào, tôi là Duy, một Front-end Developer.
+              </p>
+              <div class="about-desc">
+                <p>
+                  Với tôi, lập trình front-end không chỉ là viết code, mà là kiến
+                  tạo nên những hành trình số mượt mà và đáng nhớ. Tôi tin rằng
+                  một giao diện web xuất sắc phải là sự kết hợp hài hòa giữa thẩm
+                  mỹ tinh tế, hiệu năng vượt trội và khả năng tiếp cận cho mọi
+                  người dùng.
+                </p>
               <p>
-                Tôi chuyên xây dựng giao diện web hiện đại, tập trung vào hiệu
-                năng và khả năng truy cập. Mỗi dòng code tôi viết đều hướng tới
-                mục tiêu tạo ra trải nghiệm người dùng mượt mà và đáng nhớ.
+                Bằng việc sử dụng thành thạo
+                <strong>React, Next.js, TypeScript</strong> tôi biến những ý
+                tưởng phức tạp thành các sản phẩm web sống động, dễ bảo trì và
+                có khả năng mở rộng. Tôi dùng <strong>Tailwind CSS</strong> như
+                một công cụ đắc lực để tăng tốc quá trình xây dựng giao diện
+                nhất quán và hiện đại.
               </p>
               <p>
-                Với kinh nghiệm làm việc với
-                <strong>React, Next.js, TypeScript</strong> và
-                <strong>Tailwind CSS</strong>, tôi luôn tìm cách tối ưu hóa quy
-                trình phát triển và tạo ra những sản phẩm có chất lượng cao, dễ
-                bảo trì và mở rộng.
+                Dù làm việc độc lập hay trong một đội nhóm năng động, mục tiêu
+                của tôi luôn là mang lại giá trị thực sự thông qua những dòng
+                code chỉn chu và những trải nghiệm lay động người dùng.
               </p>
             </div>
           </div>
