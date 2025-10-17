@@ -77,7 +77,7 @@ sections.forEach((sec) => sec && obs.observe(sec));
 
 // ===== Hero text swap - Improved smooth animation
 const swapText = document.getElementById('swapText');
-const labels = ['Thanh Dui', 'Front-end Developer'];
+const labels = ['Thanh Duy', 'Front-end Developer'];
 let idx = 0;
 let isAnimating = false;
 
@@ -109,3 +109,17 @@ function animateTextSwap() {
 
 // Start the animation loop
 setInterval(animateTextSwap, 3000);
+
+// === Tilt on scroll for Career avatar ===
+const careerTilt = document.querySelector('.career .tilt-target');
+if (careerTilt) {
+  const tiltObs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        careerTilt.classList.toggle('is-in', entry.isIntersecting);
+      });
+    },
+    { rootMargin: '-20% 0px -20% 0px', threshold: 0 }
+  );
+  tiltObs.observe(careerTilt);
+}

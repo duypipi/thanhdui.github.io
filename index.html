@@ -1,179 +1,160 @@
 <!DOCTYPE html>
 <html lang="vi" data-theme="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portfolio – Thanh Duy</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!-- =================== HEADER =================== -->
-    <header id="top">
-      <div class="container nav">
-        <a href="#top" class="brand">
-          <img src="./assets/logo.svg" alt="Logo Thanh Duy" class="logo-svg" />
-        </a>
 
-        <nav aria-label="Chuyển tới phần">
-          <ul id="mainNav">
-            <li><a href="#about" data-spy>About me</a></li>
-            <li><a href="#skills" data-spy>Skill</a></li>
-            <li><a href="#projects" data-spy>Projects</a></li>
-            <li><a href="#contact" data-spy>Contact me</a></li>
-          </ul>
-        </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio – Thanh Duy</title>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
 
-        <div class="right">
-          <button class="btn-theme" id="themeBtn" aria-label="Đổi giao diện">
-            <span id="themeIcon" aria-hidden="true">🌙</span
-            ><span class="sr-only">Đổi dark/light</span>
-          </button>
-          <button class="menu-toggle" id="menuBtn" aria-label="Mở menu">
-            ☰
-          </button>
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- =================== HEADER =================== -->
+  <header id="top">
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <img src="./assets/logo.svg" alt="Logo Thanh Duy" class="logo-svg" />
+      </a>
+
+      <nav aria-label="Chuyển tới phần">
+        <ul id="mainNav">
+          <li><a href="#about" data-spy>About me</a></li>
+          <li><a href="#career" data-spy>Career</a></li>
+          <li><a href="#hobbies" data-spy>Hobbies</a></li>
+          <li><a href="#skills" data-spy>Skill</a></li>
+          <li><a href="#projects" data-spy>Projects</a></li>
+          <li><a href="#certificates" data-spy>Certificates</a></li>
+          <li><a href="#members" data-spy>Members</a></li>
+          <li><a href="#contact" data-spy>Contact me</a></li>
+        </ul>
+      </nav>
+
+      <div class="right">
+        <button class="btn-theme" id="themeBtn" aria-label="Đổi giao diện">
+          <span id="themeIcon" aria-hidden="true">🌙</span><span class="sr-only">Đổi dark/light</span>
+        </button>
+        <button class="menu-toggle" id="menuBtn" aria-label="Mở menu">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- Drawer for mobile -->
+    <div class="drawer" id="drawer">
+      <div class="drawer-nav">
+        <li><a href="#about" data-spy>About me</a></li>
+        <li><a href="#career" data-spy>Career</a></li>
+        <li><a href="#hobbies" data-spy>Hobbies</a></li>
+        <li><a href="#skills" data-spy>Skill</a></li>
+        <li><a href="#projects" data-spy>Projects</a></li>
+        <li><a href="#certificates" data-spy>Certificates</a></li>
+        <li><a href="#members" data-spy>Members</a></li>
+        <li><a href="#contact" data-spy>Contact me</a></li>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =================== HERO =================== -->
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">👋 Xin chào!</div>
+          <h1 class="title">
+            Tôi là <span class="swap-line" id="swapText">Thanh Duy</span><br />
+            <span class="muted">Mang sản phẩm số đến gần hơn với người dùng.</span>
+          </h1>
+          <p class="lede">
+            Tôi là Thanh Duy, một lập trình viên Front-end, chuyên biến những
+            ý tưởng sáng tạo thành các giao diện web mượt mà, hiệu quả và mang
+            lại trải nghiệm tốt nhất cho người dùng.
+          </p>
+          <div class="socials" aria-label="Mạng xã hội">
+            <a class="icon-btn" href="https://www.linkedin.com/in/duy-thanh-b32589351/" target="_blank" rel="noopener"
+              aria-label="LinkedIn">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4zM8 8h3.8v2.2h.06c.53-1 1.84-2.2 3.78-2.2C20 8 24 10.42 24 16.08V24h-4v-7.2c0-1.72-.03-3.94-2.4-3.94-2.4 0-2.77 1.87-2.77 3.8V24h-4V8z" />
+              </svg>
+            </a>
+            <a class="icon-btn" href="https://github.com/duypipi" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.2c-3.34.73-4.04-1.61-4.04-1.61-.55-1.41-1.34-1.79-1.34-1.79-1.1-.77.08-.75.08-.75 1.22.09 1.86 1.26 1.86 1.26 1.08 1.86 2.83 1.32 3.52 1.01.11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0C18.12 5.6 19.12 5.92 19.12 5.92c.66 1.65.24 2.87.12 3.17.77.84 1.24 1.9 1.24 3.22 0 4.61-2.8 5.62-5.48 5.92.43.38.82 1.11.82 2.24v3.32c0 .32.21.7.82.58A12 12 0 0 0 12 .5z" />
+              </svg>
+            </a>
+            <a class="icon-btn" href="https://www.instagram.com/duyzxje_214/" target="_blank" rel="noopener"
+              aria-label="Instagram">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.95.24 2.4.4.6.23 1.03.5 1.48.95.45.45.72.88.95 1.48.16.45.35 1.23.4 2.4.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.95-.4 2.4a3.9 3.9 0 0 1-.95 1.48 3.9 3.9 0 0 1-1.48.95c-.45.16-1.23.35-2.4.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.95-.24-2.4-.4a3.9 3.9 0 0 1-1.48-.95A3.9 3.9 0 0 1 2.67 20c-.16-.45-.35-1.23-.4-2.4C2.21 16.33 2.2 15.95 2.2 12.75s.01-3.58.07-4.85c.05-1.17.24-1.95.4-2.4.23-.6.5-1.03.95-1.48.45-.45.88-.72 1.48-.95.45-.16 1.23-.35 2.4-.4C8.42 2.21 8.8 2.2 12 2.2m0-1.7C8.75.5 8.34.51 7.06.57 5.77.63 4.86.84 4.1 1.12 3.28 1.42 2.6 1.82 1.93 2.49a5.6 5.6 0 0 0-1.37 2.17c-.3.76-.5 1.68-.56 2.96C-.06 9.9-.07 10.31-.07 12.75c0 2.44.01 2.85.07 4.13.06 1.28.27 2.2.56 2.96.3.76.7 1.44 1.37 2.11.67.67 1.35 1.07 2.11 1.37.76.29 1.68.5 2.96.56 1.28.06 1.69.07 4.13.07s2.85-.01 4.13-.07c1.28-.06 2.2-.27 2.96-.56a5.6 5.6 0 0 0 2.11-1.37 5.6 5.6 0 0 0 1.37-2.11c.29-.76.5-1.68.56-2.96.06-1.28.07-1.69.07-4.13s-.01-2.85-.07-4.13c-.06-1.28-.27-2.2-.56-2.96a5.6 5.6 0 0 0-1.37-2.11A5.6 5.6 0 0 0 20 1.12c-.76-.29-1.68-.5-2.96-.56C15.75.5 15.34.49 12 .49z" />
+                <path
+                  d="M12 5.9A6.1 6.1 0 1 0 12 18.1 6.1 6.1 0 1 0 12 5.9m0-1.7a7.8 7.8 0 1 1 0 15.6 7.8 7.8 0 0 1 0-15.6zM18.4 4.9a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z" />
+              </svg>
+            </a>
+            <a class="icon-btn" href="https://www.facebook.com/le.pham.thanh.duy.2024" target="_blank" rel="noopener"
+              aria-label="Facebook">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M22 12.06C22 6.48 17.52 2 11.94 2S2 6.48 2 12.06C2 17.06 5.66 21.2 10.44 22v-7.05H7.9v-2.89h2.54v-2.2c0-2.5 1.49-3.88 3.78-3.88 1.1 0 2.25.2 2.25.2v2.48h-1.27c-1.25 0-1.64.78-1.64 1.58v1.82h2.8l-.45 2.89h-2.35V22C18.34 21.2 22 17.06 22 12.06z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="avatar-card">
+          <div class="avatar-wrap" aria-hidden="true">
+            <img src="assets/avatar.jpg" alt="Thanh Duy" class="avatar-img" />
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Drawer for mobile -->
-      <div class="drawer" id="drawer">
-        <div class="drawer-nav">
-          <a href="#about" data-spy>About me</a>
-          <a href="#skills" data-spy>Skill</a>
-          <a href="#education" data-spy>My Education</a>
-          <a href="#projects" data-spy>Projects</a>
-          <a href="#contact" data-spy>Contact me</a>
+    <!-- =================== ABOUT =================== -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="about-title">About me</h2>
+        <div class="about-avatar">
+          <div class="frame-cyber-tech">
+            <img src="assets/avatar-2.PNG" alt="Avatar - About" class="about-avatar-img" />
+          </div>
         </div>
-      </div>
-    </header>
+        <div class="about-grid">
+          <!-- Left: Content -->
+          <div class="about-content">
+            <!-- ABOUT avatar (cyber-tech) -->
 
-    <main>
-      <!-- =================== HERO =================== -->
-      <section id="hero" class="hero">
-        <div class="container hero-grid">
-          <div>
-            <div class="badge">👋 Xin chào!</div>
-            <h1 class="title">
-              Tôi là <span class="swap-line" id="swapText">Thanh Duy</span
-              ><br />
-              <span class="muted"
-                >Mang sản phẩm số đến gần hơn với người dùng.</span
-              >
-            </h1>
-            <p class="lede">
-              Tôi là Thanh Duy, một lập trình viên Front-end, chuyên biến những
-              ý tưởng sáng tạo thành các giao diện web mượt mà, hiệu quả và mang
-              lại trải nghiệm tốt nhất cho người dùng.
+            <p class="about-intro">
+              Xin chào, tôi là Duy, một Front-end Developer.
             </p>
-            <div class="socials" aria-label="Mạng xã hội">
-              <a
-                class="icon-btn"
-                href="https://www.linkedin.com/in/duy-thanh-b32589351/"
-                target="_blank"
-                rel="noopener"
-                aria-label="LinkedIn"
-              >
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4zM8 8h3.8v2.2h.06c.53-1 1.84-2.2 3.78-2.2C20 8 24 10.42 24 16.08V24h-4v-7.2c0-1.72-.03-3.94-2.4-3.94-2.4 0-2.77 1.87-2.77 3.8V24h-4V8z"
-                  />
-                </svg>
-              </a>
-              <a
-                class="icon-btn"
-                href="https://github.com/duypipi"
-                target="_blank"
-                rel="noopener"
-                aria-label="GitHub"
-              >
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.2c-3.34.73-4.04-1.61-4.04-1.61-.55-1.41-1.34-1.79-1.34-1.79-1.1-.77.08-.75.08-.75 1.22.09 1.86 1.26 1.86 1.26 1.08 1.86 2.83 1.32 3.52 1.01.11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0C18.12 5.6 19.12 5.92 19.12 5.92c.66 1.65.24 2.87.12 3.17.77.84 1.24 1.9 1.24 3.22 0 4.61-2.8 5.62-5.48 5.92.43.38.82 1.11.82 2.24v3.32c0 .32.21.7.82.58A12 12 0 0 0 12 .5z"
-                  />
-                </svg>
-              </a>
-              <a
-                class="icon-btn"
-                href="https://www.instagram.com/duyzxje_214/"
-                target="_blank"
-                rel="noopener"
-                aria-label="Instagram"
-              >
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.95.24 2.4.4.6.23 1.03.5 1.48.95.45.45.72.88.95 1.48.16.45.35 1.23.4 2.4.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.95-.4 2.4a3.9 3.9 0 0 1-.95 1.48 3.9 3.9 0 0 1-1.48.95c-.45.16-1.23.35-2.4.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.95-.24-2.4-.4a3.9 3.9 0 0 1-1.48-.95A3.9 3.9 0 0 1 2.67 20c-.16-.45-.35-1.23-.4-2.4C2.21 16.33 2.2 15.95 2.2 12.75s.01-3.58.07-4.85c.05-1.17.24-1.95.4-2.4.23-.6.5-1.03.95-1.48.45-.45.88-.72 1.48-.95.45-.16 1.23-.35 2.4-.4C8.42 2.21 8.8 2.2 12 2.2m0-1.7C8.75.5 8.34.51 7.06.57 5.77.63 4.86.84 4.1 1.12 3.28 1.42 2.6 1.82 1.93 2.49a5.6 5.6 0 0 0-1.37 2.17c-.3.76-.5 1.68-.56 2.96C-.06 9.9-.07 10.31-.07 12.75c0 2.44.01 2.85.07 4.13.06 1.28.27 2.2.56 2.96.3.76.7 1.44 1.37 2.11.67.67 1.35 1.07 2.11 1.37.76.29 1.68.5 2.96.56 1.28.06 1.69.07 4.13.07s2.85-.01 4.13-.07c1.28-.06 2.2-.27 2.96-.56a5.6 5.6 0 0 0 2.11-1.37 5.6 5.6 0 0 0 1.37-2.11c.29-.76.5-1.68.56-2.96.06-1.28.07-1.69.07-4.13s-.01-2.85-.07-4.13c-.06-1.28-.27-2.2-.56-2.96a5.6 5.6 0 0 0-1.37-2.11A5.6 5.6 0 0 0 20 1.12c-.76-.29-1.68-.5-2.96-.56C15.75.5 15.34.49 12 .49z"
-                  />
-                  <path
-                    d="M12 5.9A6.1 6.1 0 1 0 12 18.1 6.1 6.1 0 1 0 12 5.9m0-1.7a7.8 7.8 0 1 1 0 15.6 7.8 7.8 0 0 1 0-15.6zM18.4 4.9a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"
-                  />
-                </svg>
-              </a>
-              <a
-                class="icon-btn"
-                href="https://www.facebook.com/le.pham.thanh.duy.2024"
-                target="_blank"
-                rel="noopener"
-                aria-label="Facebook"
-              >
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M22 12.06C22 6.48 17.52 2 11.94 2S2 6.48 2 12.06C2 17.06 5.66 21.2 10.44 22v-7.05H7.9v-2.89h2.54v-2.2c0-2.5 1.49-3.88 3.78-3.88 1.1 0 2.25.2 2.25.2v2.48h-1.27c-1.25 0-1.64.78-1.64 1.58v1.82h2.8l-.45 2.89h-2.35V22C18.34 21.2 22 17.06 22 12.06z"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <div class="avatar-card">
-            <div class="avatar-wrap" aria-hidden="true">
-              <img src="assets/avatar.jpg" alt="Thanh Duy" class="avatar-img" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- =================== ABOUT =================== -->
-      <section id="about" class="about">
-        <div class="container">
-          <h2 class="about-title">About me</h2>
-          
-          <div class="about-grid">
-            <!-- Left: Content -->
-            <div class="about-content">
-              <p class="about-intro">
-                Xin chào, tôi là Duy, một Front-end Developer.
+            <div class="about-desc">
+              <p>
+                Với tôi, lập trình front-end không chỉ là viết code, mà là kiến
+                tạo nên những hành trình số mượt mà và đáng nhớ. Tôi tin rằng
+                một giao diện web xuất sắc phải là sự kết hợp hài hòa giữa thẩm
+                mỹ tinh tế, hiệu năng vượt trội và khả năng tiếp cận cho mọi
+                người dùng.
               </p>
-              <div class="about-desc">
-                <p>
-                  Với tôi, lập trình front-end không chỉ là viết code, mà là kiến
-                  tạo nên những hành trình số mượt mà và đáng nhớ. Tôi tin rằng
-                  một giao diện web xuất sắc phải là sự kết hợp hài hòa giữa thẩm
-                  mỹ tinh tế, hiệu năng vượt trội và khả năng tiếp cận cho mọi
-                  người dùng.
-                </p>
               <p>
                 Bằng việc sử dụng thành thạo
                 <strong>React, Next.js, TypeScript</strong> tôi biến những ý
@@ -197,8 +178,7 @@
                 <div class="info-icon">
                   <svg viewBox="0 0 24 24">
                     <path
-                      d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-                    />
+                      d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                   </svg>
                 </div>
                 <div class="info-content">
@@ -211,16 +191,13 @@
                 <div class="info-icon">
                   <svg viewBox="0 0 24 24">
                     <path
-                      d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
-                    />
+                      d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                   </svg>
                 </div>
                 <div class="info-content">
                   <span class="info-label">Email</span>
                   <span class="info-value">
-                    <a href="mailto:thanhdui214@gmail.com"
-                      >thanhdui214@gmail.com</a
-                    >
+                    <a href="mailto:thanhdui214@gmail.com">thanhdui214@gmail.com</a>
                   </span>
                 </div>
               </div>
@@ -229,8 +206,7 @@
                 <div class="info-icon">
                   <svg viewBox="0 0 24 24">
                     <path
-                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-                    />
+                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                   </svg>
                 </div>
                 <div class="info-content">
@@ -243,8 +219,7 @@
                 <div class="info-icon">
                   <svg viewBox="0 0 24 24">
                     <path
-                      d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"
-                    />
+                      d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" />
                   </svg>
                 </div>
                 <div class="info-content">
@@ -254,570 +229,621 @@
               </div>
             </div>
 
-            <!-- <a href="#" class="btn-cv">
+            <a href="assets/thanhduy_CV.pdf" class="btn-cv" download="Le-Pham-Thanh-Duy-CV" title="Tải xuống CV (PDF)">
               <svg viewBox="0 0 24 24">
                 <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
               </svg>
               Download CV
-            </a> -->
+            </a>
           </div>
         </div>
-      </section>
+    </section>
 
-      <!-- =================== SKILL & ABILITIES =================== -->
-      <section id="skills" class="skills">
-        <div class="container">
-          <!-- ===== Front-end ===== -->
-          <div class="skills-section">
-            <div class="skills-text">
-              <h2 class="skills-title">Front-end</h2>
-              <p class="skills-desc">
-                Tập trung xây dựng giao diện hiện đại, hiệu năng và dễ mở rộng
-                với hệ sinh thái React/Next, TypeScript và util-first CSS.
-              </p>
-            </div>
-
-            <div class="tech-grid">
-              <!-- Hàng 1 -->
-              <a class="tech-card" href="#" title="HTML5">
-                <img
-                  alt="HTML5"
-                  src="https://cdn.simpleicons.org/html5/E34F26"
-                />
-                <span class="label">HTML5</span>
-              </a>
-              <a class="tech-card" href="#" title="CSS3">
-                <img alt="CSS3" src="https://cdn.simpleicons.org/css/1572B6" />
-                <span class="label">CSS</span>
-              </a>
-              <a class="tech-card" href="#" title="Tailwind CSS">
-                <img
-                  alt="Tailwind CSS"
-                  src="https://cdn.simpleicons.org/tailwindcss/38BDF8"
-                />
-                <span class="label">Tailwind</span>
-              </a>
-              <a class="tech-card" href="#" title="shadcn/ui">
-                <img
-                  alt="shadcn/ui"
-                  src="https://cdn.simpleicons.org/radixui/FFFFFF"
-                />
-                <span class="label">Shadcn</span>
-              </a>
-              <a class="tech-card" href="#" title="JavaScript">
-                <img
-                  alt="JavaScript"
-                  src="https://cdn.simpleicons.org/javascript/F7DF1E"
-                />
-                <span class="label">JavaScript</span>
-              </a>
-
-              <!-- Hàng 2 -->
-              <a class="tech-card" href="#" title="TypeScript">
-                <img
-                  alt="TypeScript"
-                  src="https://cdn.simpleicons.org/typescript/3178C6"
-                />
-                <span class="label">TypeScript</span>
-              </a>
-              <a class="tech-card" href="#" title="React">
-                <img
-                  alt="React"
-                  src="https://cdn.simpleicons.org/react/61DAFB"
-                />
-                <span class="label">React</span>
-              </a>
-              <a class="tech-card" href="#" title="Next.js">
-                <img
-                  alt="Next.js"
-                  src="https://cdn.simpleicons.org/nextdotjs/FFFFFF"
-                />
-                <span class="label">Next.js</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- ===== Back-end (đảo bố cục giống ảnh mẫu) ===== -->
-          <div class="skills-section skills-section--alt">
-            <div class="tech-grid">
-              <a class="tech-card" href="#" title="Node.js">
-                <img
-                  alt="Node.js"
-                  src="https://cdn.simpleicons.org/nodedotjs/339933"
-                />
-                <span class="label">Node.js</span>
-              </a>
-              <a class="tech-card" href="#" title="Express">
-                <img
-                  alt="Express"
-                  src="https://cdn.simpleicons.org/express/FFFFFF"
-                />
-                <span class="label">Express</span>
-              </a>
-              <a class="tech-card" href="#" title="MongoDB">
-                <img
-                  alt="MongoDB"
-                  src="https://cdn.simpleicons.org/mongodb/47A248"
-                />
-                <span class="label">MongoDB</span>
-              </a>
-              <a class="tech-card" href="#" title="MySQL">
-                <img
-                  alt="MySQL"
-                  src="https://cdn.simpleicons.org/mysql/4479A1"
-                />
-                <span class="label">MySQL</span>
-              </a>
-            </div>
-
-            <div class="skills-text">
-              <h2 class="skills-title">Back-end</h2>
-              <p class="skills-desc">
-                Kiến trúc API nhẹ, dễ bảo trì với Node/Express; lưu trữ dữ liệu
-                trên MongoDB và MySQL cho cả use-case linh hoạt lẫn quan hệ chặt
-                chẽ.
-              </p>
-            </div>
-          </div>
-
-          <!-- ===== Tool ===== -->
-          <div class="skills-section">
-            <div class="skills-text">
-              <h2 class="skills-title">Tool</h2>
-              <p class="skills-desc">
-                Bộ công cụ phục vụ thiết kế và cộng tác: tạo prototype nhanh,
-                quản lý phiên bản minh bạch.
-              </p>
-            </div>
-
-            <div class="tech-grid">
-              <a class="tech-card" href="#" title="Figma">
-                <img
-                  alt="Figma"
-                  src="https://cdn.simpleicons.org/figma/F24E1E"
-                />
-                <span class="label">Figma</span>
-              </a>
-              <a class="tech-card" href="#" title="Git">
-                <img alt="Git" src="https://cdn.simpleicons.org/git/F05032" />
-                <span class="label">Git</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects" class="projects">
-        <div class="container">
-          <h2 class="projects-heading">Projects</h2>
-
-          <!-- === Project: Veltra === -->
-          <article class="project">
-            <div class="project-media">
-              <div class="mockup">
-                <img src="assets/project_veltra.png" alt="Veltra Project" />
-              </div>
-            </div>
-            <div class="project-body">
-              <div class="project-header">
-                <span class="year-badge">2024</span>
-                <a
-                  class="bubble bubble--github"
-                  href="https://github.com/duypipi/Veltra-frontend-reactjs"
-                  title="GitHub"
-                  target="_blank"
-                  ><img
-                    alt="GitHub"
-                    src="https://cdn.simpleicons.org/github/FFFFFF"
-                /></a>
-              </div>
-              <h3 class="project-title">Veltra</h3>
-              <p class="project-desc">
-                Mạng xã hội hỗ trợ nhắn tin (emoji, hình ảnh…), gọi điện, đăng
-                bài, bình luận và thả cảm xúc theo thời gian thực. Hệ thống còn
-                có các tính năng bảo mật và trang admin để quản trị nội dung.
-                Front-end xây dựng với TypeScript, React.js và Socket.IO.
-              </p>
-              <div class="tech-bubbles" aria-label="Công nghệ sử dụng">
-                <a class="bubble" title="TypeScript"
-                  ><img
-                    alt="TypeScript"
-                    src="https://cdn.simpleicons.org/typescript/3178C6"
-                /></a>
-                <a class="bubble" title="React"
-                  ><img
-                    alt="React"
-                    src="https://cdn.simpleicons.org/react/61DAFB"
-                /></a>
-                <a class="bubble" title="Tailwind CSS"
-                  ><img
-                    alt="Tailwind CSS"
-                    src="https://cdn.simpleicons.org/tailwindcss/38BDF8"
-                /></a>
-                <a class="bubble" title="shadcn/ui"
-                  ><img
-                    alt="shadcn/ui"
-                    src="https://cdn.simpleicons.org/radixui/FFFFFF"
-                /></a>
-              </div>
-            </div>
-          </article>
-
-          <!-- === Project: Sevina (đảo bố cục) === -->
-          <article class="project project--alt">
-            <div class="project-media">
-              <div class="mockup">
-                <img src="assets/project_sevina.png" alt="Sevina Project" />
-              </div>
-            </div>
-            <div class="project-body">
-              <div class="project-header">
-                <span class="year-badge">2025</span>
-                <a
-                  class="bubble bubble--github"
-                  href="https://github.com/duypipi/Sevina-frontend-reactjs"
-                  title="GitHub"
-                  target="_blank"
-                  ><img
-                    alt="GitHub"
-                    src="https://cdn.simpleicons.org/github/FFFFFF"
-                /></a>
-              </div>
-              <h3 class="project-title">Sevina</h3>
-              <p class="project-desc">
-                Front-end phát triển bằng TypeScript, ReactJS, Redux Toolkit và
-                Tailwind CSS, mang lại trải nghiệm mượt mà; tích hợp GoongMap
-                API và cơ chế quản lý trạng thái thuê/mượn hiệu quả.
-              </p>
-              <div class="tech-bubbles" aria-label="Công nghệ sử dụng">
-                <a class="bubble" title="TypeScript"
-                  ><img
-                    alt="TypeScript"
-                    src="https://cdn.simpleicons.org/typescript/3178C6"
-                /></a>
-                <a class="bubble" title="React"
-                  ><img
-                    alt="React"
-                    src="https://cdn.simpleicons.org/react/61DAFB"
-                /></a>
-                <a class="bubble" title="Tailwind CSS"
-                  ><img
-                    alt="Tailwind CSS"
-                    src="https://cdn.simpleicons.org/tailwindcss/38BDF8"
-                /></a>
-                <a class="bubble" title="shadcn/ui"
-                  ><img
-                    alt="shadcn/ui"
-                    src="https://cdn.simpleicons.org/radixui/FFFFFF"
-                /></a>
-              </div>
-            </div>
-          </article>
-
-          <!-- === Project: PreziQ === -->
-          <article class="project">
-            <div class="project-media">
-              <div class="mockup">
-                <img src="assets/project_preziq.png" alt="PreziQ! Project" />
-              </div>
-            </div>
-            <div class="project-body">
-              <div class="project-header">
-                <span class="year-badge">2025</span>
-                <a
-                  class="bubble bubble--github"
-                  href="https://github.com/duypipi/PreziQ-frontend-nextjs"
-                  title="GitHub"
-                  target="_blank"
-                  ><img
-                    alt="GitHub"
-                    src="https://cdn.simpleicons.org/github/FFFFFF"
-                /></a>
-              </div>
-              <h3 class="project-title">PreziQ!</h3>
-              <p class="project-desc">
-                Nền tảng trắc nghiệm &amp; trình chiếu tương tác, xây dựng bằng
-                Next.js, TypeScript, Tailwind CSS và triển khai trên Vercel.
-              </p>
-              <div class="tech-bubbles" aria-label="Công nghệ sử dụng">
-                <a class="bubble" title="TypeScript"
-                  ><img
-                    alt="TypeScript"
-                    src="https://cdn.simpleicons.org/typescript/3178C6"
-                /></a>
-                <a class="bubble" title="Next.js"
-                  ><img
-                    alt="Next.js"
-                    src="https://cdn.simpleicons.org/nextdotjs/FFFFFF"
-                /></a>
-                <a class="bubble" title="Tailwind CSS"
-                  ><img
-                    alt="Tailwind CSS"
-                    src="https://cdn.simpleicons.org/tailwindcss/38BDF8"
-                /></a>
-                <a class="bubble" title="shadcn/ui"
-                  ><img
-                    alt="shadcn/ui"
-                    src="https://cdn.simpleicons.org/radixui/FFFFFF"
-                /></a>
-              </div>
-            </div>
-          </article>
-
-          <!-- === Project: Jewelry (mô tả dựa ảnh yêu cầu) === -->
-          <article class="project project--alt">
-            <div class="project-media">
-              <div class="mockup">
-                <img src="assets/project_jewelry.png" alt="Jewelry Project" />
-              </div>
-            </div>
-            <div class="project-body">
-              <div class="project-header">
-                <span class="year-badge">2025</span>
-                <a
-                  class="bubble bubble--github"
-                  href="https://github.com/duypipi/Jewelry-Frontend"
-                  title="GitHub"
-                  target="_blank"
-                  ><img
-                    alt="GitHub"
-                    src="https://cdn.simpleicons.org/github/FFFFFF"
-                /></a>
-              </div>
-              <h3 class="project-title">Jewelry</h3>
-              <p class="project-desc">
-                Hệ thống hỗ trợ định giá kim cương tại cửa hàng: trang giới
-                thiệu &amp; tra cứu, ước lượng giá trị theo nhiều tiêu chí
-                (nguồn gốc, dáng cắt, kích thước, trọng lượng, màu sắc, độ tinh
-                khiết, tỉ lệ, độ bóng/đối xứng…), quản lý quy trình tiếp
-                nhận-định giá-trả kết quả, in giấy định giá/biên nhận, xử lý
-                thất lạc biên nhận, quản lý bảng giá &amp; danh mục thông số,
-                đồng bộ dữ liệu giá và dashboard thống kê.
-              </p>
-              <div class="tech-bubbles" aria-label="Công nghệ sử dụng">
-                <a class="bubble" title="TypeScript"
-                  ><img
-                    alt="TypeScript"
-                    src="https://cdn.simpleicons.org/typescript/3178C6"
-                /></a>
-                <a class="bubble" title="Next.js"
-                  ><img
-                    alt="Next.js"
-                    src="https://cdn.simpleicons.org/nextdotjs/FFFFFF"
-                /></a>
-                <a class="bubble" title="Tailwind CSS"
-                  ><img
-                    alt="Tailwind CSS"
-                    src="https://cdn.simpleicons.org/tailwindcss/38BDF8"
-                /></a>
-                <a class="bubble" title="shadcn/ui"
-                  ><img
-                    alt="shadcn/ui"
-                    src="https://cdn.simpleicons.org/radixui/FFFFFF"
-                /></a>
-                <a class="bubble" title="Express"
-                  ><img
-                    alt="Express"
-                    src="https://cdn.simpleicons.org/express/FFFFFF"
-                /></a>
-                <a class="bubble" title="MySQL"
-                  ><img
-                    alt="MySQL"
-                    src="https://cdn.simpleicons.org/mysql/4479A1"
-                /></a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="contact" class="contact">
-        <div class="container">
-          <div class="contact-grid">
-            <!-- Left: content -->
-            <aside class="contact-pane">
-              <h2 class="contact-title">Sẵn sàng hợp tác?</h2>
-              <p class="contact-sub">
-                Hãy mô tả nhu cầu của bạn càng chi tiết càng tốt. Mình sẽ phản
-                hồi trong vòng <strong>24 giờ</strong>.
-              </p>
-
-              <ul class="contact-list" aria-label="Thông tin liên hệ">
-                <li>
-                  <span class="ico" aria-hidden="true">
-                    <!-- mail icon -->
-                    <svg viewBox="0 0 24 24">
-                      <path
-                        d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5Z"
-                      />
-                    </svg>
-                  </span>
-                  <a href="mailto:thanhdui214@gmail.com" class="link"
-                    >thanhdui214@gmail.com</a
-                  >
-                </li>
-                <li>
-                  <span class="ico" aria-hidden="true">
-                    <!-- phone icon -->
-                    <svg viewBox="0 0 24 24">
-                      <path
-                        d="M6.6 10.8a15.53 15.53 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.56 3.58.56a1 1 0 0 1 1 1V20a2 2 0 0 1-2 2C9.61 22 2 14.39 2 5a2 2 0 0 1 2-2h3.48a1 1 0 0 1 1 1c0 1.25.19 2.46.56 3.58a1 1 0 0 1-.24 1.02l-2.2 2.2Z"
-                      />
-                    </svg>
-                  </span>
-                  <a href="tel:+84999999999" class="link">+84 384 033 014</a>
-                </li>
-              </ul>
-            </aside>
-
-            <!-- Right: form -->
-            <div class="form-card">
-              <form class="contact-form" autocomplete="on">
-                <h3 class="form-title">Let's Talk</h3>
-
-                <div class="row two">
-                  <label class="field">
-                    <span>First Name</span>
-                    <input
-                      type="text"
-                      name="firstName"
-                      placeholder="First name"
-                    />
-                  </label>
-                  <label class="field">
-                    <span>Last Name</span>
-                    <input
-                      type="text"
-                      name="lastName"
-                      placeholder="Last name"
-                    />
-                  </label>
-                </div>
-
-                <label class="field">
-                  <span>Email</span>
-                  <input type="email" name="email" placeholder="Your email" />
-                </label>
-
-                <label class="field">
-                  <span>Message</span>
-                  <textarea
-                    name="message"
-                    rows="5"
-                    placeholder="Your message"
-                  ></textarea>
-                </label>
-
-                <button class="btn-send" type="submit">
-                  Send Message
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="m2 21 20-9L2 3v7l14 2-14 2v7z" />
-                  </svg>
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
+    <!-- =================== CAREER & OBJECTIVES =================== -->
+    <section id="career" class="career">
       <div class="container">
-        <div class="footer-content">
-          <!-- Brand Column -->
-          <div class="footer-brand">
-            <div class="footer-logo">
-              <img
-                src="./assets/logo.svg"
-                alt="Logo thanh duy"
-                class="logo-svg"
-              />
-            </div>
-            <p class="footer-tagline">
-              Xây dựng giao diện web hiện đại với mã sạch và trải nghiệm người
-              dùng tối ưu.
+        <!-- H2 được tách ra khỏi grid -->
+        <h2 class="section-head">Nghề nghiệp</h2>
+
+        <div class="career-grid">
+          <!-- Left: text -->
+          <div class="career-content">
+            <p class="career-intro">
+              Tôi là <strong>Front-end Developer</strong> tập trung vào <strong>React/Next.js</strong> và
+              <strong>TypeScript</strong>, xây dựng giao diện hiện đại, hiệu năng và có khả năng mở rộng.
+              Tôi ưu tiên trải nghiệm người dùng, khả năng truy cập, và tính nhất quán với <strong>Tailwind CSS</strong>
+              &amp; <strong>Shadcn</strong>.
             </p>
-            <div class="footer-socials" aria-label="Mạng xã hội">
-              <a
-                class="footer-social-btn"
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener"
-                aria-label="LinkedIn"
-              >
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4zM8 8h3.8v2.2h.06c.53-1 1.84-2.2 3.78-2.2C20 8 24 10.42 24 16.08V24h-4v-7.2c0-1.72-.03-3.94-2.4-3.94-2.4 0-2.77 1.87-2.77 3.8V24h-4V8z"
-                  />
-                </svg>
-              </a>
-              <a
-                class="footer-social-btn"
-                href="https://github.com"
-                target="_blank"
-                rel="noopener"
-                aria-label="GitHub"
-              >
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.2c-3.34.73-4.04-1.61-4.04-1.61-.55-1.41-1.34-1.79-1.34-1.79-1.1-.77.08-.75.08-.75 1.22.09 1.86 1.26 1.86 1.26 1.08 1.86 2.83 1.32 3.52 1.01.11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0C18.12 5.6 19.12 5.92 19.12 5.92c.66 1.65.24 2.87.12 3.17.77.84 1.24 1.9 1.24 3.22 0 4.61-2.8 5.62-5.48 5.92.43.38.82 1.11.82 2.24v3.32c0 .32.21.7.82.58A12 12 0 0 0 12 .5z"
-                  />
-                </svg>
-              </a>
-              <a
-                class="footer-social-btn"
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener"
-                aria-label="Instagram"
-              >
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.95.24 2.4.4.6.23 1.03.5 1.48.95.45.45.72.88.95 1.48.16.45.35 1.23.4 2.4.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.95-.4 2.4a3.9 3.9 0 0 1-.95 1.48 3.9 3.9 0 0 1-1.48.95c-.45.16-1.23.35-2.4.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.95-.24-2.4-.4a3.9 3.9 0 0 1-1.48-.95A3.9 3.9 0 0 1 2.67 20c-.16-.45-.35-1.23-.4-2.4C2.21 16.33 2.2 15.95 2.2 12.75s.01-3.58.07-4.85c.05-1.17.24-1.95.4-2.4.23-.6.5-1.03.95-1.48.45-.45.88-.72 1.48-.95.45-.16 1.23-.35 2.4-.4C8.42 2.21 8.8 2.2 12 2.2m0-1.7C8.75.5 8.34.51 7.06.57 5.77.63 4.86.84 4.1 1.12 3.28 1.42 2.6 1.82 1.93 2.49a5.6 5.6 0 0 0-1.37 2.17c-.3.76-.5 1.68-.56 2.96C-.06 9.9-.07 10.31-.07 12.75c0 2.44.01 2.85.07 4.13.06 1.28.27 2.2.56 2.96.3.76.7 1.44 1.37 2.11.67.67 1.35 1.07 2.11 1.37.76.29 1.68.5 2.96.56 1.28.06 1.69.07 4.13.07s2.85-.01 4.13-.07c1.28-.06 2.2-.27 2.96-.56a5.6 5.6 0 0 0 2.11-1.37 5.6 5.6 0 0 0 1.37-2.11c.29-.76.5-1.68.56-2.96.06-1.28.07-1.69.07-4.13s-.01-2.85-.07-4.13c-.06-1.28-.27-2.2-.56-2.96a5.6 5.6 0 0 0-1.37-2.11A5.6 5.6 0 0 0 20 1.12c-.76-.29-1.68-.5-2.96-.56C15.75.5 15.34.49 12 .49z"
-                  />
-                  <path
-                    d="M12 5.9A6.1 6.1 0 1 0 12 18.1 6.1 6.1 0 1 0 12 5.9m0-1.7a7.8 7.8 0 1 1 0 15.6 7.8 7.8 0 0 1 0-15.6zM18.4 4.9a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"
-                  />
-                </svg>
-              </a>
-              <a
-                class="footer-social-btn"
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener"
-                aria-label="Facebook"
-              >
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M22 12.06C22 6.48 17.52 2 11.94 2S2 6.48 2 12.06C2 17.06 5.66 21.2 10.44 22v-7.05H7.9v-2.89h2.54v-2.2c0-2.5 1.49-3.88 3.78-3.88 1.1 0 2.25.2 2.25.2v2.48h-1.27c-1.25 0-1.64.78-1.64 1.58v1.82h2.8l-.45 2.89h-2.35V22C18.34 21.2 22 17.06 22 12.06z"
-                  />
-                </svg>
-              </a>
+
+            <!-- Objectives: 1 line + dots (CSS thuần) -->
+            <div class="goals">
+              <div class="goals-wrap">
+                <div class="goal">
+                  <div class="goal-text">
+                    <strong>Ngắn hạn:</strong> Hoàn thiện kiến thức nền tảng về HTML, CSS, JavaScript và React. 
+                    Thực hành qua các dự án cá nhân, portfolio, và rèn luyện kỹ năng responsive, UI cơ bản.
+                  </div>
+                </div>
+                <div class="goal">
+                  <div class="goal-text">
+                    <strong>Trung hạn:</strong> Tham gia thực tập hoặc dự án nhóm với vai trò Front-end Developer. 
+                    Làm quen với Git, API, tối ưu hiệu suất giao diện.
+                  </div>
+                </div>
+                <div class="goal">
+                  <div class="goal-text">
+                    <strong>Dài hạn:</strong> Trở thành Front-end Developer chuyên nghiệp, có khả năng xây dựng 
+                    ứng dụng web hiện đại, nắm vững TypeScript và Next.js, hướng đến full-stack trong tương lai.
+                  </div>
+                </div>
+              </div>
+              
             </div>
           </div>
 
-          <!-- Quick Links -->
-          <div class="footer-nav">
-            <ul class="footer-links">
-              <li><a href="#hero">Home</a></li>
-              <li><a href="#about">About Me</a></li>
-              <li><a href="#skills">Skills</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-        </div>
+          <!-- Right: photo portrait placeholder -->
+          <aside class="photo-card portrait tilt-target">
+            <div class="rect-avatar">
+              <img src="assets/avatar-3.JPG" alt="Ảnh cá nhân (career)" class="rect-avatar-img" />
+            </div>
+          </aside>
 
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-          <p class="footer-copy">
-            © <span id="year"></span> <strong>Thanh Dui</strong>. Made with
-            <span class="heart">❤️</span> in Vietnam
-          </p>
         </div>
       </div>
-    </footer>
+    </section>
 
-    <script src="main.js"></script>
-  </body>
+    <!-- =================== HOBBIES =================== -->
+    <section id="hobbies" class="hobbies">
+      <div class="container">
+        <!-- H2 được tách ra khỏi grid -->
+        <h2 class="section-head">Sở thích</h2>
+
+        <div class="hobbies-grid">
+          <aside class="hobby-avatar">
+            <div class="hobby-square">
+              <img src="assets/avatar-4.jpg" alt="Avatar - Hobbies" class="hobby-square-img" />
+            </div>
+          </aside>
+
+          <!-- Right: interests -->
+          <div class="hobbies-content">
+            <div class="hobby-grid">
+              <!-- Icon dùng SVG từ CDN (lucide-static) để tương thích trình duyệt cũ -->
+              <div class="hobby-card">
+                <span class="icon-badge">
+                  <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/code.svg" alt="Coding">
+                </span>
+                <div class="hobby-text">
+                  <h4>Coding</h4>
+                  <p>Side-project với React/Next, tối ưu DX &amp; tooling.</p>
+                </div>
+              </div>
+
+              <div class="hobby-card">
+                <span class="icon-badge">
+                  <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/plane.svg" alt="Du lịch">
+                </span>
+                <div class="hobby-text">
+                  <h4>Du lịch</h4>
+                  <p>Mở rộng trải nghiệm, học thêm văn hoá &amp; insight người dùng.</p>
+                </div>
+              </div>
+
+              <div class="hobby-card">
+                <span class="icon-badge">
+                  <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/utensils.svg" alt="Ẩm thực">
+                </span>
+                <div class="hobby-text">
+                  <h4>Ẩm thực</h4>
+                  <p>Khám phá quán ngon và câu chuyện phía sau món ăn.</p>
+                </div>
+              </div>
+
+              <div class="hobby-card">
+                <span class="icon-badge">
+                  <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/music.svg" alt="Nghe nhạc">
+                </span>
+                <div class="hobby-text">
+                  <h4>Nghe nhạc</h4>
+                  <p>Giữ nhịp flow khi code, cập nhật podcast công nghệ.</p>
+                </div>
+              </div>
+
+              <div class="hobby-card">
+                <span class="icon-badge">
+                  <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/film.svg" alt="Xem phim">
+                </span>
+                <div class="hobby-text">
+                  <h4>Xem phim</h4>
+                  <p>Thưởng thức kịch bản hay, học cách kể chuyện bằng hình ảnh.</p>
+                </div>
+              </div>
+
+              <div class="hobby-card">
+                <span class="icon-badge">
+                  <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/gamepad-2.svg" alt="Chơi game">
+                </span>
+                <div class="hobby-text">
+                  <h4>Chơi game</h4>
+                  <p>Giải trí và quan sát UX/thiết kế hệ thống trong game.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- =================== SKILL & ABILITIES =================== -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <!-- ===== Front-end ===== -->
+        <div class="skills-section">
+          <div class="skills-text">
+            <h2 class="skills-title">Front-end</h2>
+            <p class="skills-desc">
+              Tập trung xây dựng giao diện hiện đại, hiệu năng và dễ mở rộng
+              với hệ sinh thái React/Next, TypeScript và util-first CSS.
+            </p>
+          </div>
+
+          <div class="tech-grid">
+            <!-- Hàng 1 -->
+            <a class="tech-card" href="#" title="HTML5">
+              <img alt="HTML5" src="https://cdn.simpleicons.org/html5/E34F26" />
+              <span class="label">HTML5</span>
+            </a>
+            <a class="tech-card" href="#" title="CSS3">
+              <img alt="CSS3" src="https://cdn.simpleicons.org/css/1572B6" />
+              <span class="label">CSS</span>
+            </a>
+            <a class="tech-card" href="#" title="Tailwind CSS">
+              <img alt="Tailwind CSS" src="https://cdn.simpleicons.org/tailwindcss/38BDF8" />
+              <span class="label">Tailwind</span>
+            </a>
+            <a class="tech-card" href="#" title="shadcn/ui">
+              <img alt="shadcn/ui" src="https://cdn.simpleicons.org/radixui/FFFFFF" />
+              <span class="label">Shadcn</span>
+            </a>
+            <a class="tech-card" href="#" title="JavaScript">
+              <img alt="JavaScript" src="https://cdn.simpleicons.org/javascript/F7DF1E" />
+              <span class="label">JavaScript</span>
+            </a>
+
+            <!-- Hàng 2 -->
+            <a class="tech-card" href="#" title="TypeScript">
+              <img alt="TypeScript" src="https://cdn.simpleicons.org/typescript/3178C6" />
+              <span class="label">TypeScript</span>
+            </a>
+            <a class="tech-card" href="#" title="React">
+              <img alt="React" src="https://cdn.simpleicons.org/react/61DAFB" />
+              <span class="label">React</span>
+            </a>
+            <a class="tech-card" href="#" title="Next.js">
+              <img alt="Next.js" src="https://cdn.simpleicons.org/nextdotjs/FFFFFF" />
+              <span class="label">Next.js</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- ===== Back-end (đảo bố cục giống ảnh mẫu) ===== -->
+        <div class="skills-section skills-section--alt">
+          <div class="tech-grid">
+            <a class="tech-card" href="#" title="Node.js">
+              <img alt="Node.js" src="https://cdn.simpleicons.org/nodedotjs/339933" />
+              <span class="label">Node.js</span>
+            </a>
+            <a class="tech-card" href="#" title="Express">
+              <img alt="Express" src="https://cdn.simpleicons.org/express/FFFFFF" />
+              <span class="label">Express</span>
+            </a>
+            <a class="tech-card" href="#" title="MongoDB">
+              <img alt="MongoDB" src="https://cdn.simpleicons.org/mongodb/47A248" />
+              <span class="label">MongoDB</span>
+            </a>
+            <a class="tech-card" href="#" title="MySQL">
+              <img alt="MySQL" src="https://cdn.simpleicons.org/mysql/4479A1" />
+              <span class="label">MySQL</span>
+            </a>
+          </div>
+
+          <div class="skills-text">
+            <h2 class="skills-title">Back-end</h2>
+            <p class="skills-desc">
+              Kiến trúc API nhẹ, dễ bảo trì với Node/Express; lưu trữ dữ liệu
+              trên MongoDB và MySQL cho cả use-case linh hoạt lẫn quan hệ chặt
+              chẽ.
+            </p>
+          </div>
+        </div>
+
+        <!-- ===== Tool ===== -->
+        <div class="skills-section">
+          <div class="skills-text">
+            <h2 class="skills-title">Tool</h2>
+            <p class="skills-desc">
+              Bộ công cụ phục vụ thiết kế và cộng tác: tạo prototype nhanh,
+              quản lý phiên bản minh bạch.
+            </p>
+          </div>
+
+          <div class="tech-grid">
+            <a class="tech-card" href="#" title="Figma">
+              <img alt="Figma" src="https://cdn.simpleicons.org/figma/F24E1E" />
+              <span class="label">Figma</span>
+            </a>
+            <a class="tech-card" href="#" title="Git">
+              <img alt="Git" src="https://cdn.simpleicons.org/git/F05032" />
+              <span class="label">Git</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2 class="projects-heading">Projects</h2>
+
+        <!-- === Project: Veltra === -->
+        <article class="project">
+          <div class="project-media">
+            <div class="mockup">
+              <img src="assets/project_veltra.png" alt="Veltra Project" />
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-header">
+              <span class="year-badge">2024</span>
+              <a class="bubble bubble--github" href="https://github.com/duypipi/Veltra-frontend-reactjs" title="GitHub"
+                target="_blank"><img alt="GitHub" src="https://cdn.simpleicons.org/github/FFFFFF" /></a>
+            </div>
+            <h3 class="project-title">Veltra</h3>
+            <p class="project-desc">
+              Mạng xã hội hỗ trợ nhắn tin (emoji, hình ảnh…), gọi điện, đăng
+              bài, bình luận và thả cảm xúc theo thời gian thực. Hệ thống còn
+              có các tính năng bảo mật và trang admin để quản trị nội dung.
+              Front-end xây dựng với TypeScript, React.js và Socket.IO.
+            </p>
+            <div class="tech-bubbles" aria-label="Công nghệ sử dụng">
+              <a class="bubble" title="TypeScript"><img alt="TypeScript"
+                  src="https://cdn.simpleicons.org/typescript/3178C6" /></a>
+              <a class="bubble" title="React"><img alt="React" src="https://cdn.simpleicons.org/react/61DAFB" /></a>
+              <a class="bubble" title="Tailwind CSS"><img alt="Tailwind CSS"
+                  src="https://cdn.simpleicons.org/tailwindcss/38BDF8" /></a>
+              <a class="bubble" title="shadcn/ui"><img alt="shadcn/ui"
+                  src="https://cdn.simpleicons.org/radixui/FFFFFF" /></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- === Project: Sevina (đảo bố cục) === -->
+        <article class="project project--alt">
+          <div class="project-media">
+            <div class="mockup">
+              <img src="assets/project_sevina.png" alt="Sevina Project" />
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-header">
+              <span class="year-badge">2025</span>
+              <a class="bubble bubble--github" href="https://github.com/duypipi/Sevina-frontend-reactjs" title="GitHub"
+                target="_blank"><img alt="GitHub" src="https://cdn.simpleicons.org/github/FFFFFF" /></a>
+            </div>
+            <h3 class="project-title">Sevina</h3>
+            <p class="project-desc">
+              Front-end phát triển bằng TypeScript, ReactJS, Redux Toolkit và
+              Tailwind CSS, mang lại trải nghiệm mượt mà; tích hợp GoongMap
+              API và cơ chế quản lý trạng thái thuê/mượn hiệu quả.
+            </p>
+            <div class="tech-bubbles" aria-label="Công nghệ sử dụng">
+              <a class="bubble" title="TypeScript"><img alt="TypeScript"
+                  src="https://cdn.simpleicons.org/typescript/3178C6" /></a>
+              <a class="bubble" title="React"><img alt="React" src="https://cdn.simpleicons.org/react/61DAFB" /></a>
+              <a class="bubble" title="Tailwind CSS"><img alt="Tailwind CSS"
+                  src="https://cdn.simpleicons.org/tailwindcss/38BDF8" /></a>
+              <a class="bubble" title="shadcn/ui"><img alt="shadcn/ui"
+                  src="https://cdn.simpleicons.org/radixui/FFFFFF" /></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- === Project: PreziQ === -->
+        <article class="project">
+          <div class="project-media">
+            <div class="mockup">
+              <img src="assets/project_preziq.png" alt="PreziQ! Project" />
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-header">
+              <span class="year-badge">2025</span>
+              <a class="bubble bubble--github" href="https://github.com/duypipi/PreziQ-frontend-nextjs" title="GitHub"
+                target="_blank"><img alt="GitHub" src="https://cdn.simpleicons.org/github/FFFFFF" /></a>
+            </div>
+            <h3 class="project-title">PreziQ!</h3>
+            <p class="project-desc">
+              Nền tảng trắc nghiệm &amp; trình chiếu tương tác, xây dựng bằng
+              Next.js, TypeScript, Tailwind CSS và triển khai trên Vercel.
+            </p>
+            <div class="tech-bubbles" aria-label="Công nghệ sử dụng">
+              <a class="bubble" title="TypeScript"><img alt="TypeScript"
+                  src="https://cdn.simpleicons.org/typescript/3178C6" /></a>
+              <a class="bubble" title="Next.js"><img alt="Next.js"
+                  src="https://cdn.simpleicons.org/nextdotjs/FFFFFF" /></a>
+              <a class="bubble" title="Tailwind CSS"><img alt="Tailwind CSS"
+                  src="https://cdn.simpleicons.org/tailwindcss/38BDF8" /></a>
+              <a class="bubble" title="shadcn/ui"><img alt="shadcn/ui"
+                  src="https://cdn.simpleicons.org/radixui/FFFFFF" /></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- === Project: Jewelry (mô tả dựa ảnh yêu cầu) === -->
+        <article class="project project--alt">
+          <div class="project-media">
+            <div class="mockup">
+              <img src="assets/project_jewelry.png" alt="Jewelry Project" />
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-header">
+              <span class="year-badge">2025</span>
+              <a class="bubble bubble--github" href="https://github.com/duypipi/Jewelry-Frontend" title="GitHub"
+                target="_blank"><img alt="GitHub" src="https://cdn.simpleicons.org/github/FFFFFF" /></a>
+            </div>
+            <h3 class="project-title">Jewelry</h3>
+            <p class="project-desc">
+              Hệ thống hỗ trợ định giá kim cương tại cửa hàng: trang giới
+              thiệu &amp; tra cứu, ước lượng giá trị theo nhiều tiêu chí
+              (nguồn gốc, dáng cắt, kích thước, trọng lượng, màu sắc, độ tinh
+              khiết, tỉ lệ, độ bóng/đối xứng…), quản lý quy trình tiếp
+              nhận-định giá-trả kết quả, in giấy định giá/biên nhận, xử lý
+              thất lạc biên nhận, quản lý bảng giá &amp; danh mục thông số,
+              đồng bộ dữ liệu giá và dashboard thống kê.
+            </p>
+            <div class="tech-bubbles" aria-label="Công nghệ sử dụng">
+              <a class="bubble" title="TypeScript"><img alt="TypeScript"
+                  src="https://cdn.simpleicons.org/typescript/3178C6" /></a>
+              <a class="bubble" title="Next.js"><img alt="Next.js"
+                  src="https://cdn.simpleicons.org/nextdotjs/FFFFFF" /></a>
+              <a class="bubble" title="Tailwind CSS"><img alt="Tailwind CSS"
+                  src="https://cdn.simpleicons.org/tailwindcss/38BDF8" /></a>
+              <a class="bubble" title="shadcn/ui"><img alt="shadcn/ui"
+                  src="https://cdn.simpleicons.org/radixui/FFFFFF" /></a>
+              <a class="bubble" title="Express"><img alt="Express"
+                  src="https://cdn.simpleicons.org/express/FFFFFF" /></a>
+              <a class="bubble" title="MySQL"><img alt="MySQL" src="https://cdn.simpleicons.org/mysql/4479A1" /></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =================== Certificate =================== -->
+    <section id="certificates" class="achievements">
+      <div class="container">
+        <h2 class="ach-heading">Certificates</h2>
+
+        <article class="ach-card">
+          <!-- Left: text -->
+          <div class="ach-body">
+            <h3 class="ach-title">Google Cloud Computing Foundations</h3>
+            <p class="ach-desc">
+              Hoàn thành chương trình nền tảng về điện toán đám mây của Google Cloud, 
+              nắm vững khái niệm cloud (IaaS/PaaS/SaaS, vùng/khu vực, VPC), thực hành 
+              các dịch vụ cốt lõi gồm Compute (Compute Engine, giới thiệu Kubernetes/GKE), 
+              Storage & Databases (Cloud Storage, Cloud SQL/Firestore), Networking (VPC, 
+              subnet, firewall), IAM & Security, Monitoring & Billing. Thực hiện lab trên 
+              Google Cloud Skills Boost để triển khai và vận hành giải pháp thực tế.
+            </p>
+
+            <div class="ach-meta">
+              <span class="ach-time" aria-label="Thời gian hoàn thành">
+                Hoàn thành: <strong>09/2025</strong>
+              </span>
+            </div>
+          </div>
+
+          <!-- Right: certificate image with tilt -->
+          <div class="ach-media">
+            <div class="cert-wrap">
+              <img class="cert-img"
+                src="assets/google_cert.PNG"
+                alt="Google Cloud Certificate" />
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =================== MEMBER =================== -->
+    <section id="members" class="members">
+      <div class="container">
+        <h2 class="members-title">Member</h2>
+
+        <div class="member-grid">
+          <!-- Member 1 -->
+          <a class="member-card" href="https://github.com/<username-4>" target="_blank" rel="noopener">
+            <div class="member-photo">
+              <img src="assets/member-4.jpg" alt="Phú Thuận" loading="lazy" />
+            </div>
+            <h3 class="member-name">Phú Thuận</h3>
+          </a>
+
+          <!-- Member 2 -->
+          <a class="member-card" href="https://github.com/avatar_my_hau" target="_blank" rel="noopener">
+            <div class="member-photo">
+              <img src="assets/avatar_my_hau.JPG" alt="Mỹ Hậu" loading="lazy" />
+            </div>
+            <h3 class="member-name">Mỹ Hậu</h3>
+          </a>
+
+          <!-- Member 3 -->
+          <a class="member-card" href="https://github.com/avatar_my_hau" target="_blank" rel="noopener">
+            <div class="member-photo">
+              <img src="assets/avatar_kim_dai.JPG" alt="Kim Đại" loading="lazy" />
+            </div>
+            <h3 class="member-name">Kim Đại</h3>
+          </a>
+
+          <!-- Member 4 -->
+
+          <a class="member-card" href="https://github.com/duypipi" target="_blank" rel="noopener">
+            <div class="member-photo">
+              <img src="assets/avatar.jpg" alt="Thanh Duy" loading="lazy" />
+            </div>
+            <h3 class="member-name">Lê Phạm Thanh Duy</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Left: content -->
+          <aside class="contact-pane">
+            <h2 class="contact-title">Sẵn sàng hợp tác?</h2>
+            <p class="contact-sub">
+              Hãy mô tả nhu cầu của bạn càng chi tiết càng tốt. Mình sẽ phản
+              hồi trong vòng <strong>24 giờ</strong>.
+            </p>
+
+            <ul class="contact-list" aria-label="Thông tin liên hệ">
+              <li>
+                <span class="ico" aria-hidden="true">
+                  <!-- mail icon -->
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5Z" />
+                  </svg>
+                </span>
+                <a href="mailto:thanhdui214@gmail.com" class="link">thanhdui214@gmail.com</a>
+              </li>
+              <li>
+                <span class="ico" aria-hidden="true">
+                  <!-- phone icon -->
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M6.6 10.8a15.53 15.53 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.56 3.58.56a1 1 0 0 1 1 1V20a2 2 0 0 1-2 2C9.61 22 2 14.39 2 5a2 2 0 0 1 2-2h3.48a1 1 0 0 1 1 1c0 1.25.19 2.46.56 3.58a1 1 0 0 1-.24 1.02l-2.2 2.2Z" />
+                  </svg>
+                </span>
+                <a href="tel:+84384033014" class="link">+84 384 033 014</a>
+              </li>
+            </ul>
+          </aside>
+
+          <!-- Right: form -->
+          <div class="form-card">
+            <form class="contact-form" autocomplete="on">
+              <h3 class="form-title">Let's Talk</h3>
+
+              <div class="row two">
+                <label class="field">
+                  <span>First Name</span>
+                  <input type="text" name="firstName" placeholder="First name" />
+                </label>
+                <label class="field">
+                  <span>Last Name</span>
+                  <input type="text" name="lastName" placeholder="Last name" />
+                </label>
+              </div>
+
+              <label class="field">
+                <span>Email</span>
+                <input type="email" name="email" placeholder="Your email" />
+              </label>
+
+              <label class="field">
+                <span>Message</span>
+                <textarea name="message" rows="5" placeholder="Your message"></textarea>
+              </label>
+
+              <button class="btn-send" type="submit">
+                Send Message
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m2 21 20-9L2 3v7l14 2-14 2v7z" />
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="./assets/logo.svg" alt="Logo thanh duy" class="logo-svg" />
+          </div>
+          <p class="footer-tagline">
+            Xây dựng giao diện web hiện đại với mã sạch và trải nghiệm người
+            dùng tối ưu.
+          </p>
+          <div class="footer-socials" aria-label="Mạng xã hội">
+            <a class="footer-social-btn" href="https://linkedin.com" target="_blank" rel="noopener"
+              aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4zM8 8h3.8v2.2h.06c.53-1 1.84-2.2 3.78-2.2C20 8 24 10.42 24 16.08V24h-4v-7.2c0-1.72-.03-3.94-2.4-3.94-2.4 0-2.77 1.87-2.77 3.8V24h-4V8z" />
+              </svg>
+            </a>
+            <a class="footer-social-btn" href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.2c-3.34.73-4.04-1.61-4.04-1.61-.55-1.41-1.34-1.79-1.34-1.79-1.1-.77.08-.75.08-.75 1.22.09 1.86 1.26 1.86 1.26 1.08 1.86 2.83 1.32 3.52 1.01.11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0C18.12 5.6 19.12 5.92 19.12 5.92c.66 1.65.24 2.87.12 3.17.77.84 1.24 1.9 1.24 3.22 0 4.61-2.8 5.62-5.48 5.92.43.38.82 1.11.82 2.24v3.32c0 .32.21.7.82.58A12 12 0 0 0 12 .5z" />
+              </svg>
+            </a>
+            <a class="footer-social-btn" href="https://instagram.com" target="_blank" rel="noopener"
+              aria-label="Instagram">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.95.24 2.4.4.6.23 1.03.5 1.48.95.45.45.72.88.95 1.48.16.45.35 1.23.4 2.4.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.95-.4 2.4a3.9 3.9 0 0 1-.95 1.48 3.9 3.9 0 0 1-1.48.95c-.45.16-1.23.35-2.4.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.95-.24-2.4-.4a3.9 3.9 0 0 1-1.48-.95A3.9 3.9 0 0 1 2.67 20c-.16-.45-.35-1.23-.4-2.4C2.21 16.33 2.2 15.95 2.2 12.75s.01-3.58.07-4.85c.05-1.17.24-1.95.4-2.4.23-.6.5-1.03.95-1.48.45-.45.88-.72 1.48-.95.45-.16 1.23-.35 2.4-.4C8.42 2.21 8.8 2.2 12 2.2m0-1.7C8.75.5 8.34.51 7.06.57 5.77.63 4.86.84 4.1 1.12 3.28 1.42 2.6 1.82 1.93 2.49a5.6 5.6 0 0 0-1.37 2.17c-.3.76-.5 1.68-.56 2.96C-.06 9.9-.07 10.31-.07 12.75c0 2.44.01 2.85.07 4.13.06 1.28.27 2.2.56 2.96.3.76.7 1.44 1.37 2.11.67.67 1.35 1.07 2.11 1.37.76.29 1.68.5 2.96.56 1.28.06 1.69.07 4.13.07s2.85-.01 4.13-.07c1.28-.06 2.2-.27 2.96-.56a5.6 5.6 0 0 0 2.11-1.37 5.6 5.6 0 0 0 1.37-2.11c.29-.76.5-1.68.56-2.96.06-1.28.07-1.69.07-4.13s-.01-2.85-.07-4.13c-.06-1.28-.27-2.2-.56-2.96a5.6 5.6 0 0 0-1.37-2.11A5.6 5.6 0 0 0 20 1.12c-.76-.29-1.68-.5-2.96-.56C15.75.5 15.34.49 12 .49z" />
+                <path
+                  d="M12 5.9A6.1 6.1 0 1 0 12 18.1 6.1 6.1 0 1 0 12 5.9m0-1.7a7.8 7.8 0 1 1 0 15.6 7.8 7.8 0 0 1 0-15.6zM18.4 4.9a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z" />
+              </svg>
+            </a>
+            <a class="footer-social-btn" href="https://facebook.com" target="_blank" rel="noopener"
+              aria-label="Facebook">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22 12.06C22 6.48 17.52 2 11.94 2S2 6.48 2 12.06C2 17.06 5.66 21.2 10.44 22v-7.05H7.9v-2.89h2.54v-2.2c0-2.5 1.49-3.88 3.78-3.88 1.1 0 2.25.2 2.25.2v2.48h-1.27c-1.25 0-1.64.78-1.64 1.58v1.82h2.8l-.45 2.89h-2.35V22C18.34 21.2 22 17.06 22 12.06z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-nav">
+          <ul class="footer-links">
+            <li><a href="#about" data-spy>About me</a></li>
+            <li><a href="#career" data-spy>Career</a></li>
+            <li><a href="#hobbies" data-spy>Hobbies</a></li>
+            <li><a href="#skills" data-spy>Skill</a></li>
+            <li><a href="#projects" data-spy>Projects</a></li>
+            <li><a href="#certificates" data-spy>Certificates</a></li>
+            <li><a href="#members" data-spy>Members</a></li>
+            <li><a href="#contact" data-spy>Contact me</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          © <span id="year"></span> <strong>Thanh Dui</strong>. Made with
+          <span class="heart">❤️</span> in Vietnam
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
 </html>
